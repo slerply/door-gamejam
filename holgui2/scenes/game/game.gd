@@ -9,7 +9,6 @@ func _ready():
 	print("GAME ready")
 	_init_cooldown_interval()
 	
-	
 func _process(_delta: float) -> void:
 	# check if regen interval ran out
 	if cooldown > 0:
