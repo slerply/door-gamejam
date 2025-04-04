@@ -1,6 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://c1aaj3ahfxxf4"]
+[gd_scene load_steps=3 format=3 uid="uid://c1aaj3ahfxxf4"]
 
 [ext_resource type="PackedScene" uid="uid://tq8fjdeqwq1d" path="res://scenes/corridor/corridor_Element.tscn" id="1_17vod"]
+
+[sub_resource type="Environment" id="Environment_17vod"]
+fog_density = 0.1438
+volumetric_fog_enabled = true
+volumetric_fog_albedo = Color(0.329158, 0.329158, 0.329158, 1)
+volumetric_fog_emission = Color(0.224304, 0.224304, 0.224304, 1)
+volumetric_fog_length = 554.36
 
 [node name="CorridorScene" type="Node3D"]
 
@@ -20,3 +27,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0)
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.11769, 0, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_17vod")

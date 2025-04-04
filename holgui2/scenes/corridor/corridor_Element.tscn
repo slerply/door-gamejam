@@ -43,7 +43,7 @@ material_override = SubResource("StandardMaterial3D_87x1c")
 mesh = SubResource("PlaneMesh_3ja1l")
 
 [node name="Wall" type="MeshInstance3D" parent="."]
-transform = Transform3D(-1, -8.74228e-08, -4.37114e-08, 4.37114e-08, 1.91069e-15, -1, 8.74228e-08, -1, 1.91069e-15, 0, 0, 1)
+transform = Transform3D(-1, -1.50996e-07, 6.60024e-15, 0, -4.37114e-08, -1, 1.50996e-07, -1, 4.37114e-08, 0, 0, 1)
 material_override = SubResource("StandardMaterial3D_1fqv3")
 mesh = SubResource("PlaneMesh_5ib2q")
 
