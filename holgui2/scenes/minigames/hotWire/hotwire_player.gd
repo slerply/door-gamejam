@@ -14,7 +14,6 @@ func _on_win_area_area_entered(area: Area2D) -> void:
 
 
 func _on_death_area_area_entered(area: Area2D) -> void:
-	print("you loose")
 	disabled = true
 	global_position = get_parent().global_position
 	position.x -= size.x/2
@@ -24,6 +23,5 @@ func _on_death_area_area_entered(area: Area2D) -> void:
 
 
 func _on_reenable_button_delay_timeout() -> void:
-	print("go")
 	disabled=false
 	pass # Replace with function body.
