@@ -1,5 +1,10 @@
 extends Button
 
+## Reference to the minigame scene.
+@export var HotwireMinigame: Minigame 
+
+## Reference to the starting point for the key.
+@export var start_pos: Node2D 
 
 func _process(delta: float) -> void:
 	if(button_pressed):
@@ -9,13 +14,15 @@ func _process(delta: float) -> void:
 
 
 func _on_win_area_area_entered(area: Area2D) -> void:
-	get_parent().get_parent().transition()
+	if HotwireMinigame:
+		HotwireMinigame.transition()
 	pass # Replace with function body.
 
 
 func _on_death_area_area_entered(area: Area2D) -> void:
 	disabled = true
-	global_position = get_parent().global_position
+	if start_pos:
+		global_position = start_pos.global_position
 	position.x -= size.x/2
 	position.y -= size.y/2
 	$reenableButtonDelay.start()
