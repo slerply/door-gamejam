@@ -14,6 +14,10 @@ var rng = RandomNumberGenerator.new()
 
 func _ready() -> void:
 	spawn_corridors(corridor_count)
+	
+func init_corridor() -> void:
+	clear_old_corridors()
+	spawn_corridors(corridor_count)
 
 func spawn_corridors(count: int) -> void:
 	for i in range(count):
