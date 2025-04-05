@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://brlbt4uwo7n02"]
 
 [ext_resource type="Script" uid="uid://dcqektpmu5r8x" path="res://scenes/player/player.gd" id="1_dovo2"]
-[ext_resource type="Shader" uid="uid://c7r136ave1m54" path="res://scenes/corridor/fog.gdshader" id="2_gmlin"]
+[ext_resource type="Shader" uid="uid://c7r136ave1m54" path="res://imports/assets/shader/fog.gdshader" id="2_gmlin"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xolto"]
 render_priority = 0
