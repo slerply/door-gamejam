@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bt7nfg8225okf"]
+
+[ext_resource type="Script" uid="uid://dn67dpulg1s0a" path="res://scenes/corridor_spawner/corridor_spawner.gd" id="1_w2xjl"]
+
+[node name="CorridorSpawner" type="Node"]
+script = ExtResource("1_w2xjl")

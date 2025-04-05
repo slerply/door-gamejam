@@ -1,3 +1,10 @@
-[gd_scene format=3 uid="uid://xu1e14kc8gor"]
+[gd_scene load_steps=3 format=3 uid="uid://xu1e14kc8gor"]
+
+[ext_resource type="PackedScene" uid="uid://bt7nfg8225okf" path="res://scenes/corridor_spawner/corridor_spawner.tscn" id="2_0sr1o"]
+[ext_resource type="PackedScene" uid="uid://brlbt4uwo7n02" path="res://scenes/player/player.tscn" id="2_7h61r"]
 
 [node name="Game" type="Node"]
+
+[node name="Player" parent="." instance=ExtResource("2_7h61r")]
+
+[node name="CorridorSpawner" parent="." instance=ExtResource("2_0sr1o")]

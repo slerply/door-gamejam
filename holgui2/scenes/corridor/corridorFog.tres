@@ -1,7 +1,10 @@
-[gd_resource type="Environment" format=3 uid="uid://cexpatm7itek1"]
+[gd_resource type="Environment" format=3 uid="uid://dqqmc51pqct5i"]
 
 [resource]
-fog_density = 0.1438
+background_mode = 1
+ambient_light_source = 2
+ambient_light_energy = 3.35
+fog_density = 0.5438
 volumetric_fog_enabled = true
 volumetric_fog_albedo = Color(0.329158, 0.329158, 0.329158, 1)
 volumetric_fog_length = 554.36
