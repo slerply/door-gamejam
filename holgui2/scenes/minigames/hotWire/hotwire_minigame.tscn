@@ -9,8 +9,8 @@ size = Vector2(237, 20)
 [node name="HotwireMinigame" type="Node2D"]
 
 [node name="Zb" type="Sprite2D" parent="."]
-position = Vector2(578.75, 323.75)
-scale = Vector2(0.887567, 0.885034)
+position = Vector2(561.565, 320.423)
+scale = Vector2(0.592267, 0.613946)
 texture = ExtResource("2_4b80i")
 
 [node name="deathArea" type="Area2D" parent="."]
@@ -18,14 +18,14 @@ collision_layer = 8
 collision_mask = 8
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="deathArea"]
-polygon = PackedVector2Array(22, 13, 1120, 12, 1120, 628, 35, 630, 30, 491, 183, 491, 184, 586, 358, 590, 360, 301, 481, 304, 487, 369, 398, 372, 405, 586, 773, 579, 608, 443, 813, 521, 823, 576, 1083, 564, 1091, 312, 978, 147, 1035, 76, 1092, 186, 1093, 36, 825, 39, 829, 99, 649, 105, 632, 42, 19, 73)
+polygon = PackedVector2Array(2, 100, 234, 96, 260, 113, 271, 159, 275, 248, 269, 360, 437, 358, 442, 183, 469, 167, 526, 154, 560, 168, 732, 159, 752, 171, 793, 174, 840, 196, 847, 223, 840, 259, 842, 356, 846, 386, 848, 441, 928, 428, 928, 298, 958, 283, 1059, 280, 1071, 292, 1070, 308, 1058, 317, 961, 314, 960, 438, 972, 462, 965, 484, 936, 495, 878, 496, 833, 515, 802, 509, 788, 489, 780, 267, 553, 270, 543, 376, 540, 530, 527, 550, 505, 563, 299, 564, 2, 554, -2, 113, -323, 125, -341, 915, 1494, 939, 1495, -375, -337, -317, -328, 91)
 
 [node name="winArea" type="Area2D" parent="."]
 collision_layer = 256
 collision_mask = 256
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="winArea"]
-position = Vector2(953, 560)
+position = Vector2(1165, 295)
 shape = SubResource("RectangleShape2D_4b80i")
 
 [node name="hotWireStart" type="Node2D" parent="."]
