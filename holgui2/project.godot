@@ -13,7 +13,7 @@ config_version=5
 config/name="holgui2"
 run/main_scene="uid://bnx3hl0aeuph2"
 config/features=PackedStringArray("4.4", "Forward Plus")
-config/icon="res://door.svg"
+config/icon="uid://cqctvt5v5yxqm"
 
 [display]
 
