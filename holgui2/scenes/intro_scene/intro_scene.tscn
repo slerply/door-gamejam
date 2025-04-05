@@ -1,0 +1,409 @@
+[gd_scene load_steps=33 format=3 uid="uid://cj2bk47vu7jmh"]
+
+[ext_resource type="Texture2D" uid="uid://fycdserwefrt" path="res://imports/assets/intro/Parkinglot-bush.png" id="1_o4me8"]
+[ext_resource type="Script" uid="uid://b75up7xu6jcn7" path="res://scenes/intro_scene/intro_scene.gd" id="1_tbvx4"]
+[ext_resource type="Texture2D" uid="uid://ro8hh6c6j276" path="res://imports/assets/intro/Sprite-0002.png" id="2_jbds7"]
+[ext_resource type="Texture2D" uid="uid://cqctvt5v5yxqm" path="res://imports/assets/corridorAsset/door.png" id="3_hwmsm"]
+[ext_resource type="Shader" uid="uid://c7r136ave1m54" path="res://imports/assets/shader/fog.gdshader" id="4_6x4iy"]
+[ext_resource type="Texture2D" uid="uid://du1lcn1ynkauv" path="res://imports/assets/intro/Sprite-0003.png" id="6_iy0fv"]
+[ext_resource type="Animation" uid="uid://cjnnpadqniulg" path="res://scenes/intro_scene/intro_anim.tres" id="7_jbfcd"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d602w"]
+emission_enabled = true
+emission = Color(0.884, 0.802313, 0.536138, 1)
+emission_energy_multiplier = 3.11
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_iy0fv"]
+material = SubResource("StandardMaterial3D_d602w")
+top_radius = 0.05
+bottom_radius = 0.05
+height = 0.7
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_jbds7"]
+size = Vector2(12.93, 15)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_hwmsm"]
+size = Vector2(20, 33.455)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jbds7"]
+albedo_color = Color(0.607843, 0.678431, 0.717647, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_iy0fv"]
+material = SubResource("StandardMaterial3D_jbds7")
+size = Vector2(20, 5.385)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_jbfcd"]
+material = SubResource("StandardMaterial3D_jbds7")
+size = Vector2(20, 3.335)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_d602w"]
+material = SubResource("StandardMaterial3D_jbds7")
+size = Vector2(20, 8.795)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tbvx4"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("1_o4me8")
+texture_filter = 0
+
+[sub_resource type="QuadMesh" id="QuadMesh_5abue"]
+material = SubResource("StandardMaterial3D_tbvx4")
+size = Vector2(5, 5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_64jtv"]
+albedo_texture = ExtResource("2_jbds7")
+texture_filter = 0
+
+[sub_resource type="QuadMesh" id="QuadMesh_k64eq"]
+material = SubResource("StandardMaterial3D_64jtv")
+size = Vector2(5, 5)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_6x4iy"]
+top_radius = 0.1
+bottom_radius = 0.1
+height = 3.235
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_d602w"]
+top_radius = 0.1
+bottom_radius = 0.3
+height = 0.2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jbfcd"]
+emission_enabled = true
+emission = Color(0.828268, 0.705791, 0.504971, 1)
+emission_energy_multiplier = 2.23
+
+[sub_resource type="SphereMesh" id="SphereMesh_tbvx4"]
+material = SubResource("StandardMaterial3D_jbfcd")
+radius = 0.1
+height = 0.2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iy0fv"]
+albedo_texture = ExtResource("3_hwmsm")
+texture_filter = 0
+
+[sub_resource type="QuadMesh" id="QuadMesh_jbfcd"]
+material = SubResource("StandardMaterial3D_iy0fv")
+size = Vector2(2, 2)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d602w"]
+render_priority = 0
+shader = ExtResource("4_6x4iy")
+shader_parameter/enable_fog = true
+shader_parameter/fog_color = Color(0, 0, 0, 1)
+shader_parameter/noise_color = Color(0, 0, 0, 1)
+shader_parameter/fog_distance = 50.0
+shader_parameter/fog_fade_range = 50.0
+shader_parameter/enable_noise = true
+shader_parameter/noise_time_fac = 4.0
+shader_parameter/enable_color_limitation = true
+shader_parameter/color_levels = 32
+shader_parameter/enable_dithering = true
+shader_parameter/dither_strength = 1.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_iy0fv"]
+material = SubResource("ShaderMaterial_d602w")
+flip_faces = true
+size = Vector2(2, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5abue"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("6_iy0fv")
+
+[sub_resource type="QuadMesh" id="QuadMesh_64jtv"]
+material = SubResource("StandardMaterial3D_5abue")
+size = Vector2(3, 3)
+
+[sub_resource type="Animation" id="Animation_d602w"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -1.5708, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-10, 1.5, -2)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Monster:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-6.069, 0, 3.39)]
+}
+
+[sub_resource type="Animation" id="Animation_biy2v"]
+resource_name = "walking"
+length = 2.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.0523599, -1.5708, 0.0523599), Vector3(0, -1.5708, 0), Vector3(-0.0523599, -1.5708, -0.0523599), Vector3(0, -1.5708, 0), Vector3(-0.0523599, -1.5708, 0.0523599)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1ciue"]
+_data = {
+&"RESET": SubResource("Animation_d602w"),
+&"Walking": SubResource("Animation_biy2v"),
+&"intro_anim": ExtResource("7_jbfcd")
+}
+
+[node name="IntroScene" type="Node"]
+script = ExtResource("1_tbvx4")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.985703, -0.0842447, -0.145916, -7.57103e-08, -0.866025, 0.5, -0.168489, -0.492852, -0.853644, 0, 0, 0)
+light_color = Color(1.44392e-07, 0.183673, 0.30298, 1)
+light_energy = 2.577
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.0209488, 1.56268, -2.31081)
+mesh = SubResource("CylinderMesh_iy0fv")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(5.49135e-09, 0.992077, 0.125628, 4.33651e-08, -0.125628, 0.992077, 1, 3.10862e-15, -4.37114e-08, -0.170228, 1.75873, -2.31379)
+light_energy = 0.847
+spot_range = 3.04
+spot_attenuation = 3.05
+spot_angle = 54.24
+
+[node name="Environment" type="Node3D" parent="."]
+
+[node name="Floor" type="MeshInstance3D" parent="Environment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.61094, 0, 0)
+visible = false
+mesh = SubResource("PlaneMesh_jbds7")
+skeleton = NodePath("../..")
+
+[node name="Wall1" type="MeshInstance3D" parent="Environment"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("PlaneMesh_hwmsm")
+skeleton = NodePath("../..")
+
+[node name="Wall2" type="MeshInstance3D" parent="Environment"]
+transform = Transform3D(1.91069e-15, 4.37114e-08, -1, 1, -4.37114e-08, 0, -4.37114e-08, -1, -4.37114e-08, -6.45614, 0, 6.85498)
+mesh = SubResource("PlaneMesh_hwmsm")
+skeleton = NodePath("../..")
+
+[node name="Ground" type="Node3D" parent="Environment"]
+
+[node name="Ground1" type="MeshInstance3D" parent="Environment/Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.38292, 0, 5.74288)
+mesh = SubResource("PlaneMesh_iy0fv")
+skeleton = NodePath("../../..")
+
+[node name="Ground4" type="MeshInstance3D" parent="Environment/Ground"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -17.5157, 0, -2.96634)
+mesh = SubResource("PlaneMesh_iy0fv")
+skeleton = NodePath("../../..")
+
+[node name="Ground2" type="MeshInstance3D" parent="Environment/Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.38292, 0, -3.56532)
+mesh = SubResource("PlaneMesh_jbfcd")
+skeleton = NodePath("../../..")
+
+[node name="Ground3" type="MeshInstance3D" parent="Environment/Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.38292, 0, -14.5946)
+mesh = SubResource("PlaneMesh_d602w")
+skeleton = NodePath("../../..")
+
+[node name="Bush" type="Node3D" parent="Environment"]
+
+[node name="Bush" type="MeshInstance3D" parent="Environment/Bush"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -2.358, 1.052, 3)
+mesh = SubResource("QuadMesh_5abue")
+skeleton = NodePath("../../..")
+
+[node name="Bush2" type="MeshInstance3D" parent="Environment/Bush"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -7.358, 1.052, 3)
+mesh = SubResource("QuadMesh_5abue")
+skeleton = NodePath("../../..")
+
+[node name="Bush3" type="MeshInstance3D" parent="Environment/Bush"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -12.358, 1.052, 3)
+mesh = SubResource("QuadMesh_5abue")
+skeleton = NodePath("../../..")
+
+[node name="Bush2" type="Node3D" parent="Environment"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -14.7739, 0, -7.33992)
+
+[node name="Bush" type="MeshInstance3D" parent="Environment/Bush2"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -2.358, 1.052, 3)
+mesh = SubResource("QuadMesh_5abue")
+skeleton = NodePath("../../..")
+
+[node name="Bush2" type="MeshInstance3D" parent="Environment/Bush2"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -7.358, 1.052, 3)
+mesh = SubResource("QuadMesh_5abue")
+skeleton = NodePath("../../..")
+
+[node name="Bush3" type="MeshInstance3D" parent="Environment/Bush2"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -12.358, 1.052, 3)
+mesh = SubResource("QuadMesh_5abue")
+skeleton = NodePath("../../..")
+
+[node name="ParkingLot" type="Node3D" parent="Environment"]
+
+[node name="ParkingLot" type="MeshInstance3D" parent="Environment/ParkingLot"]
+transform = Transform3D(-1, 0, -8.74228e-08, -8.74228e-08, -4.37114e-08, 1, -3.82137e-15, 1, 4.37114e-08, -2.37015, 0, 0.540381)
+mesh = SubResource("QuadMesh_k64eq")
+skeleton = NodePath("../../..")
+
+[node name="ParkingLot2" type="MeshInstance3D" parent="Environment/ParkingLot"]
+transform = Transform3D(-1, 0, -8.74228e-08, -8.74228e-08, -4.37114e-08, 1, -3.82137e-15, 1, 4.37114e-08, -7.35441, 0, 0.540381)
+mesh = SubResource("QuadMesh_k64eq")
+skeleton = NodePath("../../..")
+
+[node name="ParkingLot3" type="MeshInstance3D" parent="Environment/ParkingLot"]
+transform = Transform3D(-1, 0, -8.74228e-08, -8.74228e-08, -4.37114e-08, 1, -3.82137e-15, 1, 4.37114e-08, -12.3438, 0, 0.540381)
+mesh = SubResource("QuadMesh_k64eq")
+skeleton = NodePath("../../..")
+
+[node name="ParkingLot2" type="Node3D" parent="Environment"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -14.8445, 0, -7.17281)
+
+[node name="ParkingLot" type="MeshInstance3D" parent="Environment/ParkingLot2"]
+transform = Transform3D(-1, 0, -8.74228e-08, -8.74228e-08, -4.37114e-08, 1, -3.82137e-15, 1, 4.37114e-08, -2.37015, 0, 0.540381)
+mesh = SubResource("QuadMesh_k64eq")
+skeleton = NodePath("../../..")
+
+[node name="ParkingLot2" type="MeshInstance3D" parent="Environment/ParkingLot2"]
+transform = Transform3D(-1, 0, -8.74228e-08, -8.74228e-08, -4.37114e-08, 1, -3.82137e-15, 1, 4.37114e-08, -7.35441, 0, 0.540381)
+mesh = SubResource("QuadMesh_k64eq")
+skeleton = NodePath("../../..")
+
+[node name="ParkingLot3" type="MeshInstance3D" parent="Environment/ParkingLot2"]
+transform = Transform3D(-1, 0, -8.74228e-08, -8.74228e-08, -4.37114e-08, 1, -3.82137e-15, 1, 4.37114e-08, -12.3438, 0, 0.540381)
+mesh = SubResource("QuadMesh_k64eq")
+skeleton = NodePath("../../..")
+
+[node name="StreetLamp" type="Node3D" parent="Environment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.62187, 1.60187, 3.23318)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/StreetLamp"]
+mesh = SubResource("CylinderMesh_6x4iy")
+skeleton = NodePath("../../..")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Environment/StreetLamp"]
+transform = Transform3D(1, 0, 0, 0, 0.982258, -0.187536, 0, 0.187536, 0.982258, 0, 1.74045, -0.322956)
+mesh = SubResource("CylinderMesh_d602w")
+skeleton = NodePath("../../..")
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Environment/StreetLamp"]
+transform = Transform3D(1, 0, 0, 0, 0.358547, 0.933512, 0, -0.933512, 0.358547, 0, 1.6509, -0.29933)
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Environment/StreetLamp"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.70274, -0.343425)
+mesh = SubResource("SphereMesh_tbvx4")
+
+[node name="StreetLamp2" type="Node3D" parent="Environment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.39106, 1.60187, 3.23318)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/StreetLamp2"]
+mesh = SubResource("CylinderMesh_6x4iy")
+skeleton = NodePath("../../..")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Environment/StreetLamp2"]
+transform = Transform3D(1, 0, 0, 0, 0.982258, -0.187536, 0, 0.187536, 0.982258, 0, 1.74045, -0.322956)
+mesh = SubResource("CylinderMesh_d602w")
+skeleton = NodePath("../../..")
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Environment/StreetLamp2"]
+transform = Transform3D(1, 0, 0, 0, 0.358547, 0.933512, 0, -0.933512, 0.358547, 0, 1.6509, -0.29933)
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Environment/StreetLamp2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.70274, -0.343425)
+mesh = SubResource("SphereMesh_tbvx4")
+
+[node name="StreetLamp3" type="Node3D" parent="Environment"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -8.38848, 1.60187, -10.7802)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/StreetLamp3"]
+mesh = SubResource("CylinderMesh_6x4iy")
+skeleton = NodePath("../../..")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Environment/StreetLamp3"]
+transform = Transform3D(1, 0, 0, 0, 0.982258, -0.187536, 0, 0.187536, 0.982258, 0, 1.74045, -0.322956)
+mesh = SubResource("CylinderMesh_d602w")
+skeleton = NodePath("../../..")
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Environment/StreetLamp3"]
+transform = Transform3D(1, 0, 0, 0, 0.358547, 0.933512, 0, -0.933512, 0.358547, 0, 1.6509, -0.29933)
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Environment/StreetLamp3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.70274, -0.343425)
+mesh = SubResource("SphereMesh_tbvx4")
+
+[node name="StreetLamp4" type="Node3D" parent="Environment"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -3.62445, 1.60187, -10.5585)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/StreetLamp4"]
+mesh = SubResource("CylinderMesh_6x4iy")
+skeleton = NodePath("../../..")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Environment/StreetLamp4"]
+transform = Transform3D(1, 0, 0, 0, 0.982258, -0.187536, 0, 0.187536, 0.982258, 0, 1.74045, -0.322956)
+mesh = SubResource("CylinderMesh_d602w")
+skeleton = NodePath("../../..")
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Environment/StreetLamp4"]
+transform = Transform3D(1, 0, 0, 0, 0.358547, 0.933512, 0, -0.933512, 0.358547, 0, 1.6509, -0.29933)
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Environment/StreetLamp4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.70274, -0.343425)
+mesh = SubResource("SphereMesh_tbvx4")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.0256038, 0.975214, -2.30738)
+mesh = SubResource("QuadMesh_jbfcd")
+skeleton = NodePath("../..")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-3.61999e-06, 0, -1, 0, 1, 0, 1, 0, -3.61999e-06, -10, 1.5, -2)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.32453e-08, 0, -0.989338)
+mesh = SubResource("QuadMesh_iy0fv")
+
+[node name="Monster" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -6.069, 0, 3.39)
+mesh = SubResource("QuadMesh_64jtv")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_1ciue")
+}

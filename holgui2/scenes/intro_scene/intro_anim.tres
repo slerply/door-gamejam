@@ -1,0 +1,41 @@
+[gd_resource type="Animation" format=3 uid="uid://cjnnpadqniulg"]
+
+[resource]
+resource_name = "intro_anim"
+length = 11.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 7, 9.5, 11),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-10, 1.5, -2), Vector3(-10, 1.5, -2), Vector3(-7, 1.5, -2), Vector3(-7, 1.5, -2), Vector3(-0.91, 1.245, -2.25)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 2, 2.5, 3, 3.5, 4, 4.51424, 5.01424, 5.51424, 6.01424, 6.5, 7, 7.26667, 9.23333, 9.5, 9.75, 10, 10.25, 10.5, 10.75, 11),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, -1.5708, 0), Vector3(0.0349066, -1.5708, 0), Vector3(0, -1.5708, 0), Vector3(-0.0523599, -1.5708, 0.0523599), Vector3(0, -1.5708, 0), Vector3(-0.0523599, -1.5708, -0.0523599), Vector3(0, -1.5708, 0), Vector3(-0.0523599, -1.5708, 0.0523599), Vector3(0, -1.5708, 0), Vector3(-0.0523599, -1.5708, -0.0523599), Vector3(0, -1.5708, 0), Vector3(-0.0523599, -1.5708, 0.0523599), Vector3(0, -1.5708, 0), Vector3(0, -2.79253, 0), Vector3(0, -2.79253, 0), Vector3(0, -1.5708, 0), Vector3(-0.0523599, -1.5708, -0.0523599), Vector3(0, -1.5708, 0), Vector3(-0.0523599, -1.5708, 0.0523599), Vector3(0, -1.5708, 0), Vector3(-0.0523599, -1.5708, -0.0523599), Vector3(0, -1.5708, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Monster:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(7.6, 9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-6.069, 0, 3.39), Vector3(-6.069, 1.015, 3.39)]
+}
