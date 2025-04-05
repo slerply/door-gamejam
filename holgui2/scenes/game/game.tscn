@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://xu1e14kc8gor"]
 
-[ext_resource type="Script" uid="uid://dkarw5vss5yuq" path="res://scenes/game/game.gd" id="1_0sr1o"]
+[ext_resource type="Script" path="res://scenes/game/game.gd" id="1_0sr1o"]
 [ext_resource type="PackedScene" uid="uid://bt7nfg8225okf" path="res://scenes/corridor_spawner/corridor_spawner.tscn" id="2_0sr1o"]
 [ext_resource type="PackedScene" uid="uid://brlbt4uwo7n02" path="res://scenes/player/player.tscn" id="2_7h61r"]
 [ext_resource type="Shader" uid="uid://c768q1ajg720f" path="res://imports/assets/shader/dark_noise.gdshader" id="4_kelw5"]
