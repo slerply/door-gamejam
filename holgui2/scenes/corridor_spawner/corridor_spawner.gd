@@ -8,7 +8,7 @@ const DOOR = preload("res://scenes/corridor/door/door.tscn")
 var corridor_elements = [CORRIDOR_1]
 var corridors_instances = []
 
-signal stop_player
+signal init_minigame
 
 var rng = RandomNumberGenerator.new()
 
@@ -51,4 +51,4 @@ func set_lighting(index: int, visible: bool) -> void:
 		corridors_instances[index].set_lighting(visible)
 
 func start_minigame() -> void:
-	stop_player.emit()
+	init_minigame.emit()

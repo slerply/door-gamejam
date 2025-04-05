@@ -4,7 +4,8 @@ extends Node
 @onready var player: Node = $Player
 
 func _ready() -> void:
-	corridor_spawner.stop_player.connect(stop_player)
+	corridor_spawner.init_minigame.connect(init_minigame)
 
-func stop_player() -> void:
+func init_minigame() -> void:
 	player.toggle_movement()
+	# start minigame
