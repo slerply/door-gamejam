@@ -11,11 +11,14 @@ var corridors_instances = []
 var rng = RandomNumberGenerator.new()
 
 func _ready() -> void:
-	for i in range(corridor_count):
+	spawn_corridors(corridor_count)
+
+func spawn_corridors(count: int) -> void:
+	for i in range(count):
 		var r_number = rng.randi_range(0, corridor_elements.size() - 1)
 		var random_corridor_element = corridor_elements[r_number]
 		spawn_new_corridor(random_corridor_element, pos_offset * i)
-	spawn_new_corridor(DOOR, pos_offset * corridor_count)
+	spawn_new_corridor(DOOR, pos_offset * count)
 	for i in range(0, corridors_instances.size()):
 		set_lighting(i, false)
 
