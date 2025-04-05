@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://b2ughig1no0g5"]
+
+[ext_resource type="Texture2D" uid="uid://e8yi2071jktf" path="res://imports/assets/approach_visualisations/deathhands_spritesheet.png" id="1_1cxk7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lfrn8"]
+atlas = ExtResource("1_1cxk7")
+region = Rect2(0, 0, 128, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5i0tg"]
+atlas = ExtResource("1_1cxk7")
+region = Rect2(128, 0, 128, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bdhmt"]
+atlas = ExtResource("1_1cxk7")
+region = Rect2(256, 0, 128, 70)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_87uf6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lfrn8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5i0tg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bdhmt")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="deathHandsClose" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_87uf6")
+autoplay = "default"
+frame = 1
+frame_progress = 0.00202199
