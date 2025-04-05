@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://b1ux8qmnxmdc0"]
 
-[ext_resource type="Script" uid="uid://cbgoi4ddtcxo0" path="res://scenes/minigames/minigameController.gd" id="1_5wqyf"]
+[ext_resource type="Script" uid="uid://cbgoi4ddtcxo0" path="res://scenes/minigames/minigame_controller/minigame_controller.gd" id="1_5wqyf"]
 [ext_resource type="PackedScene" uid="uid://cji247ycc1k6w" path="res://scenes/minigames/LukeTest/Luke_test2d.tscn" id="2_y07u7"]
 [ext_resource type="PackedScene" uid="uid://bqn0roh6ujqdm" path="res://scenes/minigames/hotWire/hotwire_minigame.tscn" id="3_dwylh"]
 [ext_resource type="PackedScene" uid="uid://bvu5e1y3lovx8" path="res://scenes/minigames/LukeTest/Luke_test2d2.tscn" id="3_y07u7"]

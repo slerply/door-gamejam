@@ -23,7 +23,6 @@ func _ready() -> void:
 	randomize()
 	sequence_minigames.shuffle()
 	
-	start_all_minigames() # TODO: remove from _ready() for later
 
 func _process(delta: float) -> void:
 	if current_minigame:
