@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://bqn0roh6ujqdm"]
+
+[ext_resource type="PackedScene" uid="uid://dvuc1x4wojefl" path="res://scenes/minigames/hotWire/hotwire_player.tscn" id="1_ep4k1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4b80i"]
+size = Vector2(237, 20)
+
+[node name="HotwireMinigame" type="Node2D"]
+
+[node name="deathArea" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="deathArea"]
+polygon = PackedVector2Array(22, 13, 1120, 12, 1120, 628, 35, 630, 30, 491, 183, 491, 184, 586, 358, 590, 360, 301, 481, 304, 487, 369, 398, 372, 405, 586, 773, 579, 770, 315, 821, 318, 823, 576, 1083, 564, 1091, 312, 1050, 315, 1047, 186, 1092, 186, 1093, 36, 825, 39, 829, 99, 649, 105, 632, 42, 19, 73)
+
+[node name="HotwirePlayer" parent="." instance=ExtResource("1_ep4k1")]
+offset_left = 7.0
+offset_top = 160.0
+offset_right = 255.0
+offset_bottom = 342.0
+
+[node name="winArea" type="Area2D" parent="."]
+collision_layer = 256
+collision_mask = 256
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="winArea"]
+position = Vector2(953, 560)
+shape = SubResource("RectangleShape2D_4b80i")
+
+[connection signal="area_entered" from="deathArea" to="HotwirePlayer" method="_on_death_area_area_entered"]
+[connection signal="area_entered" from="winArea" to="HotwirePlayer" method="_on_win_area_area_entered"]

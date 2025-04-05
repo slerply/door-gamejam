@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://dvuc1x4wojefl"]
+
+[ext_resource type="Script" uid="uid://cf2u3330gwrrl" path="res://scenes/minigames/hotWire/hotwire_player.gd" id="1_khrr7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_khrr7"]
+size = Vector2(232, 168)
+
+[node name="HotwirePlayer" type="Button"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -139.0
+offset_top = -87.0
+offset_right = 109.0
+offset_bottom = 95.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(122.465, 87.195)
+script = ExtResource("1_khrr7")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 264
+collision_mask = 264
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(123, 91)
+shape = SubResource("RectangleShape2D_khrr7")
