@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://brlbt4uwo7n02"]
+
+[ext_resource type="Script" uid="uid://dcqektpmu5r8x" path="res://scenes/player/player.gd" id="1_dovo2"]
+[ext_resource type="Shader" uid="uid://c7r136ave1m54" path="res://imports/assets/shader/fog.gdshader" id="2_gmlin"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xolto"]
+render_priority = 0
+shader = ExtResource("2_gmlin")
+shader_parameter/enable_fog = true
+shader_parameter/fog_color = Color(0, 0, 0, 1)
+shader_parameter/noise_color = Color(0, 0, 0, 1)
+shader_parameter/fog_distance = 50.0
+shader_parameter/fog_fade_range = 50.0
+shader_parameter/enable_noise = true
+shader_parameter/noise_time_fac = 4.0
+shader_parameter/enable_color_limitation = true
+shader_parameter/color_levels = 32
+shader_parameter/enable_dithering = true
+shader_parameter/dither_strength = 1.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_lvxji"]
+material = SubResource("ShaderMaterial_xolto")
+flip_faces = true
+size = Vector2(2, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p47bc"]
+
+[node name="Player" type="Node"]
+script = ExtResource("1_dovo2")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.32453e-08, 0, -0.989338)
+mesh = SubResource("QuadMesh_lvxji")
+
+[node name="Area3D" type="Area3D" parent="Camera3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Camera3D/Area3D"]
+shape = SubResource("BoxShape3D_p47bc")

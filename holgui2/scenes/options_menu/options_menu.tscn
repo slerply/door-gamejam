@@ -1,0 +1,62 @@
+[gd_scene load_steps=2 format=3 uid="uid://p8bynsxcps28"]
+
+[ext_resource type="Script" uid="uid://d3ap7262mxjpb" path="res://scenes/options_menu/options_menu.gd" id="1_sglii"]
+
+[node name="OptionsMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sglii")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="MusicVolumeLabel" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+texture_filter = 2
+layout_mode = 2
+text = "Music Volume"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MusicVolumeSlider" type="HSlider" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+value = 70.0
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="SoundVolumeLabel" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer2"]
+texture_filter = 2
+layout_mode = 2
+text = "Sound Volume"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SoundVolumeSlider" type="HSlider" parent="MarginContainer/VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+value = 70.0
+
+[node name="BackButton" type="Button" parent="MarginContainer/VBoxContainer"]
+texture_filter = 2
+custom_minimum_size = Vector2(120, 50)
+layout_mode = 2
+text = "Back"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]

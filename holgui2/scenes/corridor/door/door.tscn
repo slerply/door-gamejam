@@ -1,0 +1,94 @@
+[gd_scene load_steps=18 format=3 uid="uid://b7vh8u22qwjbx"]
+
+[ext_resource type="Script" uid="uid://cnctqltm6dt52" path="res://scenes/corridor/door/door.gd" id="1_hm826"]
+[ext_resource type="Texture2D" uid="uid://xb0w8v88gn4p" path="res://imports/assets/corridorAsset/roof.png" id="1_ody1y"]
+[ext_resource type="Texture2D" uid="uid://dxvkjl2vm5ii0" path="res://imports/assets/corridorAsset/floor.png" id="2_thkas"]
+[ext_resource type="Texture2D" uid="uid://d3sv5ll7wtcpf" path="res://imports/assets/corridorAsset/walls.png" id="3_hm826"]
+[ext_resource type="Texture2D" uid="uid://cqctvt5v5yxqm" path="res://imports/assets/corridorAsset/door.png" id="4_thkas"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b8qbn"]
+albedo_texture = ExtResource("1_ody1y")
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_obtcc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tjw0h"]
+albedo_texture = ExtResource("2_thkas")
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_4bukr"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pdcmo"]
+albedo_texture = ExtResource("3_hm826")
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_bvkm4"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a7uki"]
+albedo_texture = ExtResource("3_hm826")
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_7xvyl"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hm826"]
+albedo_texture = ExtResource("4_thkas")
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_b8qbn"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hm826"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b8qbn"]
+
+[node name="Door" type="Node3D"]
+script = ExtResource("1_hm826")
+
+[node name="Meshes" type="Node3D" parent="."]
+
+[node name="Roof" type="MeshInstance3D" parent="Meshes"]
+transform = Transform3D(4.37114e-08, 3.82137e-15, 1, 8.74228e-08, -1, 0, 1, 8.74228e-08, -4.37114e-08, 0, 1, 0)
+material_override = SubResource("StandardMaterial3D_b8qbn")
+mesh = SubResource("PlaneMesh_obtcc")
+skeleton = NodePath("../..")
+
+[node name="Floor" type="MeshInstance3D" parent="Meshes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, -1, 0)
+material_override = SubResource("StandardMaterial3D_tjw0h")
+mesh = SubResource("PlaneMesh_4bukr")
+skeleton = NodePath("../..")
+
+[node name="Wall" type="MeshInstance3D" parent="Meshes"]
+transform = Transform3D(-1, -1.50996e-07, 6.60024e-15, 0, -4.37114e-08, -1, 1.50996e-07, -1, 4.37114e-08, 0, 0, 1)
+material_override = SubResource("StandardMaterial3D_pdcmo")
+mesh = SubResource("PlaneMesh_bvkm4")
+skeleton = NodePath("../..")
+
+[node name="Wall2" type="MeshInstance3D" parent="Meshes"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -1)
+material_override = SubResource("StandardMaterial3D_a7uki")
+mesh = SubResource("PlaneMesh_7xvyl")
+skeleton = NodePath("../..")
+
+[node name="Door" type="MeshInstance3D" parent="Meshes"]
+transform = Transform3D(-4.37114e-08, -1, 0, -4.37114e-08, 1.91069e-15, -1, 1, -4.37114e-08, -4.37114e-08, 1, 0, 0)
+material_override = SubResource("StandardMaterial3D_hm826")
+mesh = SubResource("PlaneMesh_b8qbn")
+
+[node name="Light" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.889848, 0)
+omni_range = 2.276
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_hm826")
+
+[node name="Area3D2" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D2"]
+shape = SubResource("BoxShape3D_b8qbn")
+
+[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
+[connection signal="area_entered" from="Area3D2" to="." method="_on_area_3d_2_area_entered"]

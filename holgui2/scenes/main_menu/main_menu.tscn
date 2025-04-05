@@ -26,16 +26,19 @@ size_flags_vertical = 4
 
 [node name="PlayButton" type="Button" parent="MarginContainer/VBoxContainer"]
 texture_filter = 2
+custom_minimum_size = Vector2(120, 50)
 layout_mode = 2
 text = "Play"
 
 [node name="OptionsButton" type="Button" parent="MarginContainer/VBoxContainer"]
 texture_filter = 2
+custom_minimum_size = Vector2(120, 50)
 layout_mode = 2
 text = "Options"
 
 [node name="QuitButton" type="Button" parent="MarginContainer/VBoxContainer"]
 texture_filter = 2
+custom_minimum_size = Vector2(120, 50)
 layout_mode = 2
 text = "Quit"
 
