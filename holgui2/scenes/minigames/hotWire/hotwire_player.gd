@@ -15,17 +15,20 @@ func _process(delta: float) -> void:
 
 func _on_win_area_area_entered(area: Area2D) -> void:
 	if HotwireMinigame:
-		HotwireMinigame.transition()
+		reset()
+		HotwireMinigame.win()
 	pass # Replace with function body.
 
-
-func _on_death_area_area_entered(area: Area2D) -> void:
+func reset():
 	disabled = true
 	if start_pos:
 		global_position = start_pos.global_position
 	position.x -= size.x/2
 	position.y -= size.y/2
 	$reenableButtonDelay.start()
+	
+func _on_death_area_area_entered(area: Area2D) -> void:
+	reset()
 	pass # Replace with function body.
 
 
