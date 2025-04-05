@@ -1,11 +1,12 @@
 extends Node
 class_name MinigameController
 
-@export var count_minigame: int = 2 
+@export var count_minigame: int = 1
 var controller: MinigameController
 var current_minigame: Minigame
 var minigames: Dictionary = {}
 var queue_minigames: Array = []
+signal all_minigames_finished
 
 func _ready() -> void:
 	controller = self
@@ -23,12 +24,14 @@ func _ready() -> void:
 		idx += 1
 		if idx >= len(temp):
 			idx = 0
-			
+# Randomize Queue
+	randomize()
+	queue_minigames.shuffle()
 # start first minigame on ready, needs to be changed to signal received
 	if !queue_minigames.is_empty():
 		current_minigame = minigames.get(queue_minigames[0].to_lower())
 		start_minigame(current_minigame)
-			
+
 func _process(delta: float) -> void:
 	if current_minigame:
 		current_minigame.update(delta)
@@ -36,18 +39,18 @@ func _process(delta: float) -> void:
 func _physics_process(delta: float) -> void:
 	if current_minigame:
 		current_minigame.physics_update(delta)
-		
+
 func start_minigame(minigame):
 	minigame.enter()
 	print("added minigame: ", minigame.name)
 	controller.add_child(minigame) # out of memory
-	
+
 func stop_minigame(minigame):
 	minigame.exit()
 	print("removed minigame: ", minigame.name)
 	controller.remove_child(minigame) # deactivates scenes but not deletes
 	current_minigame = null
-	
+
 func on_child_transition(minigame):
 	if minigame != current_minigame:
 		return
@@ -55,11 +58,12 @@ func on_child_transition(minigame):
 	if queue_minigames.is_empty():
 		stop_minigame(minigame)
 		print("! Minigames DONE !")
+		all_minigames_finished.emit()
 		return # all minigame are done
 	var new_minigame = minigames.get(queue_minigames[0].to_lower())
 	if !new_minigame:
 		return	
-	
+
 	# Clean up previous minigame
 	if current_minigame:
 		stop_minigame(current_minigame)
