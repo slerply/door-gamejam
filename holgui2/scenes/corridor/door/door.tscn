@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://b7vh8u22qwjbx"]
+[gd_scene load_steps=18 format=3 uid="uid://b7vh8u22qwjbx"]
 
 [ext_resource type="Script" uid="uid://cnctqltm6dt52" path="res://scenes/corridor/door/door.gd" id="1_hm826"]
 [ext_resource type="Texture2D" uid="uid://xb0w8v88gn4p" path="res://imports/assets/corridorAsset/roof.png" id="1_ody1y"]
@@ -37,6 +37,8 @@ texture_filter = 0
 [sub_resource type="PlaneMesh" id="PlaneMesh_b8qbn"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hm826"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b8qbn"]
 
 [node name="Door" type="Node3D"]
 script = ExtResource("1_hm826")
@@ -82,4 +84,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("BoxShape3D_hm826")
 
+[node name="Area3D2" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D2"]
+shape = SubResource("BoxShape3D_b8qbn")
+
 [connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
+[connection signal="area_entered" from="Area3D2" to="." method="_on_area_3d_2_area_entered"]

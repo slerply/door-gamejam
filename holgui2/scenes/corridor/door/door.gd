@@ -15,5 +15,8 @@ func set_lighting(value: bool) -> void:
 
 func _on_area_3d_area_entered(area: Area3D) -> void:
 	toggle_lighting()
+
+
+func _on_area_3d_2_area_entered(area: Area3D) -> void:
 	print("start_minigame")
 	start_minigame.emit()
