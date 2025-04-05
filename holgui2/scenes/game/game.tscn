@@ -7,8 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://b2ughig1no0g5" path="res://scenes/detah_proximity_effects/death_hands_close.tscn" id="5_lfrn8"]
 [ext_resource type="PackedScene" uid="uid://bl2l61luf2egi" path="res://scenes/minigames/minigame_controller/minigame_controller.tscn" id="6_2a8rs"]
 [ext_resource type="PackedScene" uid="uid://bqn0roh6ujqdm" path="res://scenes/minigames/hotWire/hotwire_minigame.tscn" id="7_4j704"]
-[ext_resource type="PackedScene" uid="uid://cji247ycc1k6w" path="res://scenes/minigames/LukeTest/Luke_test2d.tscn" id="8_kp23o"]
-[ext_resource type="PackedScene" uid="uid://bvu5e1y3lovx8" path="res://scenes/minigames/LukeTest/Luke_test2d2.tscn" id="9_5jirj"]
+[ext_resource type="PackedScene" uid="uid://vdrn2ll11m8x" path="res://scenes/minigames/cardswipe_minigame/cardswipe_minigame.tscn" id="9_2a8rs"]
+[ext_resource type="PackedScene" uid="uid://ceingjatjkqdb" path="res://scenes/minigames/quick_type_minigame/quicktype_minigame.tscn" id="10_4j704"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lfrn8"]
 shader = ExtResource("4_kelw5")
@@ -38,8 +38,8 @@ grow_vertical = 2
 
 [node name="MinigameController" parent="." instance=ExtResource("6_2a8rs")]
 
+[node name="CardswipeMinigame" parent="MinigameController" instance=ExtResource("9_2a8rs")]
+
+[node name="QuicktypeMinigame" parent="MinigameController" instance=ExtResource("10_4j704")]
+
 [node name="HotwireMinigame" parent="MinigameController" instance=ExtResource("7_4j704")]
-
-[node name="LukeTest2d" parent="MinigameController" instance=ExtResource("8_kp23o")]
-
-[node name="LukeTest2d2" parent="MinigameController" instance=ExtResource("9_5jirj")]

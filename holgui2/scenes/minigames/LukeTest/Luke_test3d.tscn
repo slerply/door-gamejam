@@ -1,9 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://b1ux8qmnxmdc0"]
+[gd_scene load_steps=11 format=3 uid="uid://b1ux8qmnxmdc0"]
 
 [ext_resource type="Script" uid="uid://cbgoi4ddtcxo0" path="res://scenes/minigames/minigame_controller/minigame_controller.gd" id="1_5wqyf"]
+[ext_resource type="PackedScene" uid="uid://ceingjatjkqdb" path="res://scenes/minigames/quick_type_minigame/quicktype_minigame.tscn" id="2_b6ivk"]
 [ext_resource type="PackedScene" uid="uid://cji247ycc1k6w" path="res://scenes/minigames/LukeTest/Luke_test2d.tscn" id="2_y07u7"]
 [ext_resource type="PackedScene" uid="uid://bqn0roh6ujqdm" path="res://scenes/minigames/hotWire/hotwire_minigame.tscn" id="3_dwylh"]
 [ext_resource type="PackedScene" uid="uid://bvu5e1y3lovx8" path="res://scenes/minigames/LukeTest/Luke_test2d2.tscn" id="3_y07u7"]
+[ext_resource type="PackedScene" uid="uid://vdrn2ll11m8x" path="res://scenes/minigames/cardswipe_minigame/cardswipe_minigame.tscn" id="6_1w1rp"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_f5fe8"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -43,3 +45,7 @@ script = ExtResource("1_5wqyf")
 [node name="HotwireMinigame" parent="MinigameController" instance=ExtResource("3_dwylh")]
 
 [node name="LukeTest2d2" parent="MinigameController" instance=ExtResource("3_y07u7")]
+
+[node name="QuicktypeMinigame" parent="MinigameController" instance=ExtResource("2_b6ivk")]
+
+[node name="CardswipeMinigame" parent="MinigameController" instance=ExtResource("6_1w1rp")]

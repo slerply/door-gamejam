@@ -4,7 +4,7 @@ extends Node
 @onready var player: Node = $Player
 @onready var minigame_controller: MinigameController = $MinigameController
 
-var total_minigames: int = 3
+var total_minigames: int = 6
 
 func _ready() -> void:
 	corridor_spawner.init_minigame.connect(init_minigame)
