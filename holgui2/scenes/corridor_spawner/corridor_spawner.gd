@@ -15,8 +15,7 @@ func _ready() -> void:
 		var r_number = rng.randi_range(0, corridor_elements.size() - 1)
 		var random_corridor_element = corridor_elements[r_number]
 		spawn_new_corridor(random_corridor_element, pos_offset * i)
-	#spawn_new_corridor(DOOR, pos_offset * corridor_count + 1)
-	
+	spawn_new_corridor(DOOR, pos_offset * corridor_count)
 	for i in range(0, corridors_instances.size()):
 		set_lighting(i, false)
 
@@ -35,4 +34,5 @@ func spawn_new_corridor(corridor_element, pos: int) -> void:
 	corridor.position.x = pos + pos_offset
 
 func set_lighting(index: int, visible: bool) -> void:
-	corridors_instances[index].set_lighting(visible)
+	if corridors_instances[index].has_method("set_lighting"):
+		corridors_instances[index].set_lighting(visible)
