@@ -1,7 +1,7 @@
 extends Node
 class_name MinigameController
 
-@export var count_minigame: int = 2 
+@export var count_minigame: int = 3 
 var controller: MinigameController
 var current_minigame: Minigame
 var minigames: Dictionary = {}

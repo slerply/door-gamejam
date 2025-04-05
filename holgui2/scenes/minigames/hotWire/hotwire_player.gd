@@ -9,7 +9,7 @@ func _process(delta: float) -> void:
 
 
 func _on_win_area_area_entered(area: Area2D) -> void:
-	print("you Win")
+	get_parent().get_parent().transition()
 	pass # Replace with function body.
 
 

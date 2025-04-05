@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bqn0roh6ujqdm"]
+[gd_scene load_steps=6 format=3 uid="uid://bqn0roh6ujqdm"]
 
 [ext_resource type="PackedScene" uid="uid://dvuc1x4wojefl" path="res://scenes/minigames/hotWire/hotwire_player.tscn" id="1_ep4k1"]
+[ext_resource type="Script" uid="uid://rfxy23q21aq" path="res://scenes/minigames/hotWire/hotwire_minigame.gd" id="1_g17bx"]
 [ext_resource type="Texture2D" uid="uid://eoqrbb4fp1re" path="res://imports/assets/zb.png" id="2_4b80i"]
 [ext_resource type="Texture2D" uid="uid://d1c0pp12ttee" path="res://imports/assets/lock.png" id="3_74v82"]
 
@@ -8,6 +9,7 @@
 size = Vector2(237, 20)
 
 [node name="HotwireMinigame" type="Node2D"]
+script = ExtResource("1_g17bx")
 
 [node name="Zb" type="Sprite2D" parent="."]
 position = Vector2(561.565, 320.423)
