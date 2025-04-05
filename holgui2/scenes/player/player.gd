@@ -4,5 +4,11 @@ extends Node
 
 @export var speed: float = 2
 
+var is_moving: bool = true
+
 func _process(delta: float) -> void:
-	camera_3d.position.x += speed * delta
+	if is_moving:
+		camera_3d.position.x += speed * delta
+
+func toggle_movement() -> void:
+	is_moving = !is_moving

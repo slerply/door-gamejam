@@ -18,5 +18,4 @@ func _on_area_3d_area_entered(area: Area3D) -> void:
 
 
 func _on_area_3d_2_area_entered(area: Area3D) -> void:
-	print("start_minigame")
 	start_minigame.emit()
