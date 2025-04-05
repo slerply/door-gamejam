@@ -33,9 +33,9 @@ position = Vector2(140, 280)
 
 [node name="HotwirePlayer" parent="hotWireStart" instance=ExtResource("1_ep4k1")]
 offset_left = -121.0
-offset_top = -86.0
+offset_top = -125.0
 offset_right = 127.0
-offset_bottom = 96.0
+offset_bottom = 57.0
 
 [connection signal="area_entered" from="deathArea" to="hotWireStart/HotwirePlayer" method="_on_death_area_area_entered"]
 [connection signal="area_entered" from="winArea" to="hotWireStart/HotwirePlayer" method="_on_win_area_area_entered"]
