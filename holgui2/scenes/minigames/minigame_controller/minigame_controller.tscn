@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bl2l61luf2egi"]
+
+[ext_resource type="Script" uid="uid://cbgoi4ddtcxo0" path="res://scenes/minigames/minigame_controller/minigame_controller.gd" id="1_tgfab"]
+
+[node name="MinigameController" type="Node"]
+script = ExtResource("1_tgfab")
