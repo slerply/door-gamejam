@@ -1,7 +1,7 @@
 extends Node
 class_name Minigame
 
-signal Transitioned
+signal Transitioned # Signal connected to MinigameController
 
 func enter():
 	pass
