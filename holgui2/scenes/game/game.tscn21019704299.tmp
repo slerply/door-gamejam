@@ -1,0 +1,51 @@
+[gd_scene load_steps=11 format=3 uid="uid://xu1e14kc8gor"]
+
+[ext_resource type="Script" uid="uid://dkarw5vss5yuq" path="res://scenes/game/game.gd" id="1_0sr1o"]
+[ext_resource type="PackedScene" uid="uid://bt7nfg8225okf" path="res://scenes/corridor_spawner/corridor_spawner.tscn" id="2_0sr1o"]
+[ext_resource type="PackedScene" uid="uid://brlbt4uwo7n02" path="res://scenes/player/player.tscn" id="2_7h61r"]
+[ext_resource type="Shader" uid="uid://c768q1ajg720f" path="res://imports/assets/shader/dark_noise.gdshader" id="4_kelw5"]
+[ext_resource type="PackedScene" uid="uid://b2ughig1no0g5" path="res://scenes/detah_proximity_effects/death_hands_close.tscn" id="5_lfrn8"]
+[ext_resource type="PackedScene" uid="uid://bl2l61luf2egi" path="res://scenes/minigames/minigame_controller/minigame_controller.tscn" id="6_2a8rs"]
+[ext_resource type="PackedScene" uid="uid://bqn0roh6ujqdm" path="res://scenes/minigames/hotWire/hotwire_minigame.tscn" id="7_4j704"]
+[ext_resource type="PackedScene" uid="uid://cji247ycc1k6w" path="res://scenes/minigames/LukeTest/Luke_test2d.tscn" id="8_kp23o"]
+[ext_resource type="PackedScene" uid="uid://bvu5e1y3lovx8" path="res://scenes/minigames/LukeTest/Luke_test2d2.tscn" id="9_5jirj"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lfrn8"]
+shader = ExtResource("4_kelw5")
+shader_parameter/radius = -0.585
+shader_parameter/speed = 2.124
+shader_parameter/effect_color = Color(0.251, 0, 0, 1)
+
+[node name="Game" type="Node"]
+script = ExtResource("1_0sr1o")
+
+[node name="Deathtimer" type="Label" parent="."]
+offset_left = 16.0
+offset_top = 595.0
+offset_right = 56.0
+offset_bottom = 623.0
+text = "test"
+
+[node name="deathHandsClose" parent="." instance=ExtResource("5_lfrn8")]
+position = Vector2(576, 335)
+scale = Vector2(9, 9.25714)
+
+[node name="Player" parent="." instance=ExtResource("2_7h61r")]
+
+[node name="CorridorSpawner" parent="." instance=ExtResource("2_0sr1o")]
+
+[node name="DarkNoise(test)" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_lfrn8")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MinigameController" parent="." instance=ExtResource("6_2a8rs")]
+
+[node name="HotwireMinigame" parent="MinigameController" instance=ExtResource("7_4j704")]
+
+[node name="LukeTest2d" parent="MinigameController" instance=ExtResource("8_kp23o")]
+
+[node name="LukeTest2d2" parent="MinigameController" instance=ExtResource("9_5jirj")]
