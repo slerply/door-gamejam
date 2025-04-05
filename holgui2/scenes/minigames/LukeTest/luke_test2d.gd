@@ -7,4 +7,4 @@ func enter():
 func physics_update(_delta: float) -> void:
 	if Input.is_action_just_pressed("space"):
 		print(self.name.to_lower()," updates")
-		Transitioned.emit(self)
+		minigame_finished.emit(self)

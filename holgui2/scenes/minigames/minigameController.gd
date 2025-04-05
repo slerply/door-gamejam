@@ -13,7 +13,7 @@ func _ready() -> void:
 	for child in get_children():
 		if child is Minigame:
 			minigames[child.name.to_lower()] = child
-			child.Transitioned.connect(on_child_transition) # listenes to child signal
+			child.minigame_finished.connect(on_child_finished) # listenes to child signal
 			controller.remove_child(child) # deactivates scenes but not deletes
 
 # create Queue
@@ -51,7 +51,7 @@ func stop_minigame(minigame):
 	controller.remove_child(minigame) # deactivates scenes but not deletes
 	current_minigame = null
 
-func on_child_transition(minigame):
+func on_child_finished(minigame):
 	if minigame != current_minigame:
 		return
 	queue_minigames.remove_at(0) # removes first minigame from Queue
