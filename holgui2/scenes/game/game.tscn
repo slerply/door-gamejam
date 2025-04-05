@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://xu1e14kc8gor"]
+[gd_scene load_steps=7 format=3 uid="uid://xu1e14kc8gor"]
 
 [ext_resource type="Script" uid="uid://dkarw5vss5yuq" path="res://scenes/game/game.gd" id="1_0sr1o"]
 [ext_resource type="PackedScene" uid="uid://bt7nfg8225okf" path="res://scenes/corridor_spawner/corridor_spawner.tscn" id="2_0sr1o"]
 [ext_resource type="PackedScene" uid="uid://brlbt4uwo7n02" path="res://scenes/player/player.tscn" id="2_7h61r"]
 [ext_resource type="Shader" uid="uid://c768q1ajg720f" path="res://imports/assets/shader/dark_noise.gdshader" id="4_kelw5"]
+[ext_resource type="PackedScene" uid="uid://b2ughig1no0g5" path="res://scenes/detah_proximity_effects/death_hands_close.tscn" id="5_lfrn8"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lfrn8"]
 shader = ExtResource("4_kelw5")
@@ -13,6 +14,10 @@ shader_parameter/effect_color = Color(0.251, 0, 0, 1)
 
 [node name="Game" type="Node"]
 script = ExtResource("1_0sr1o")
+
+[node name="deathHandsClose" parent="." instance=ExtResource("5_lfrn8")]
+position = Vector2(576, 335)
+scale = Vector2(9, 9.25714)
 
 [node name="Player" parent="." instance=ExtResource("2_7h61r")]
 
