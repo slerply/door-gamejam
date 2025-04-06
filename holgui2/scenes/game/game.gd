@@ -54,14 +54,14 @@ func handle_deathtimer(_delta: float) -> void:
 		deathtimer -= _delta
 	# emit "dead" when deathtimer runs out
 	elif deathtimer <= 0:
-		# TODO minigame_controller.stop_all_minigames(number_minigames) --> add in MinigameController
+		minigame_controller.stop_all_minigames()
 		print("YOU DIED")
 		get_tree().change_scene_to_file("res://scenes/game/death.tscn")
 
 ## reset the cooldown to original interval
 func _init_deathtimer() -> void:
-	deathtimer_label.text = str(deathtimer)
 	deathtimer = (0.8 * number_minigames) * time_per_minigame
+	deathtimer_label.text = str(deathtimer)
 	print("_init_deathtimer = ", deathtimer)
 
 func _on_minigame_finished() -> void:

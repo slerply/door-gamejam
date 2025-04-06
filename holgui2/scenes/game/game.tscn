@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://xu1e14kc8gor"]
 
-[ext_resource type="Script" path="res://scenes/game/game.gd" id="1_0sr1o"]
+[ext_resource type="Script" uid="uid://dkarw5vss5yuq" path="res://scenes/game/game.gd" id="1_0sr1o"]
 [ext_resource type="PackedScene" uid="uid://bt7nfg8225okf" path="res://scenes/corridor_spawner/corridor_spawner.tscn" id="2_0sr1o"]
 [ext_resource type="PackedScene" uid="uid://brlbt4uwo7n02" path="res://scenes/player/player.tscn" id="2_7h61r"]
 [ext_resource type="Shader" uid="uid://c768q1ajg720f" path="res://imports/assets/shader/dark_noise.gdshader" id="4_kelw5"]
@@ -37,3 +37,12 @@ grow_vertical = 2
 [node name="MinigameController" parent="." instance=ExtResource("6_2a8rs")]
 
 [node name="SpinMinigame" parent="MinigameController" instance=ExtResource("7_kp23o")]
+
+[node name="Deathtimer" type="Label" parent="."]
+offset_left = 516.0
+offset_top = 609.0
+offset_right = 674.0
+offset_bottom = 632.0
+text = "0.0"
+horizontal_alignment = 1
+vertical_alignment = 1
