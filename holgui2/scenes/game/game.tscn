@@ -1,9 +1,11 @@
-[gd_scene load_steps=17 format=3 uid="uid://xu1e14kc8gor"]
+[gd_scene load_steps=18 format=3 uid="uid://xu1e14kc8gor"]
 
 [ext_resource type="Script" uid="uid://dkarw5vss5yuq" path="res://scenes/game/game.gd" id="1_0sr1o"]
 [ext_resource type="PackedScene" uid="uid://bt7nfg8225okf" path="res://scenes/corridor_spawner/corridor_spawner.tscn" id="2_0sr1o"]
-[ext_resource type="PackedScene" uid="uid://b0ljco5gdno31" path="res://scenes/game/scary_handler/scary_handler.tscn" id="2_5i0tg"]
+[ext_resource type="PackedScene" uid="uid://b0ljco5gdno31" path="res://scenes/game/scary_handler/scary_handler.tscn" id="2_3xj4h"]
 [ext_resource type="PackedScene" uid="uid://brlbt4uwo7n02" path="res://scenes/player/player.tscn" id="2_7h61r"]
+[ext_resource type="Shader" uid="uid://c768q1ajg720f" path="res://imports/assets/shader/dark_noise.gdshader" id="4_kelw5"]
+[ext_resource type="PackedScene" uid="uid://b2ughig1no0g5" path="res://scenes/detah_proximity_effects/death_hands_close.tscn" id="5_lfrn8"]
 [ext_resource type="PackedScene" uid="uid://bl2l61luf2egi" path="res://scenes/minigames/minigame_controller/minigame_controller.tscn" id="6_2a8rs"]
 [ext_resource type="PackedScene" uid="uid://bqn0roh6ujqdm" path="res://scenes/minigames/hotWire/hotwire_minigame.tscn" id="7_4j704"]
 [ext_resource type="PackedScene" uid="uid://b5igh8ej6p10s" path="res://scenes/minigames/Aimtrainer/aimtrainer.tscn" id="7_bdhmt"]
@@ -13,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://dxxcap8d28whk" path="res://scenes/minigames/math_minigame/math_minigame.tscn" id="12_5v6r0"]
 [ext_resource type="PackedScene" uid="uid://og2y1qajmvx4" path="res://scenes/minigames/Numpad/numpad.tscn" id="13_uyinl"]
 [ext_resource type="PackedScene" uid="uid://ucrgyl7tidqs" path="res://scenes/minigames/sizeSort_minigame/SizeSort_minigame.tscn" id="15_10c2w"]
-[ext_resource type="PackedScene" uid="uid://uyoief80yc4o" path="res://scenes/minigames/spin_minigame/spin_minigame.tscn" id="15_otnwt"]
+[ext_resource type="PackedScene" uid="uid://uyoief80yc4o" path="res://scenes/spin_minigame/spin_minigame.tscn" id="15_otnwt"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lfrn8"]
 shader = ExtResource("4_kelw5")
@@ -24,12 +26,25 @@ shader_parameter/effect_color = Color(0.251, 0, 0, 1)
 [node name="Game" type="Node"]
 script = ExtResource("1_0sr1o")
 
-[node name="ScaryHandler" parent="." instance=ExtResource("2_5i0tg")]
+[node name="ScaryHandler" parent="." instance=ExtResource("2_3xj4h")]
+
+[node name="deathHandsClose" parent="." instance=ExtResource("5_lfrn8")]
+position = Vector2(576, 335)
+scale = Vector2(9, 9.25714)
 
 [node name="Player" parent="." instance=ExtResource("2_7h61r")]
 
 [node name="CorridorSpawner" parent="." instance=ExtResource("2_0sr1o")]
 corridor_count = 2
+
+[node name="DarkNoise(test)" type="ColorRect" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_lfrn8")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="MinigameController" parent="." instance=ExtResource("6_2a8rs")]
 
@@ -52,7 +67,6 @@ corridor_count = 2
 [node name="SpinMinigame" parent="MinigameController" instance=ExtResource("15_otnwt")]
 
 [node name="Deathtimer" type="Label" parent="."]
-visible = false
 offset_left = 516.0
 offset_top = 609.0
 offset_right = 674.0
