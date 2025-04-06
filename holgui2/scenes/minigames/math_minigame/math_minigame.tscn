@@ -5,6 +5,12 @@
 [node name="MathMinigame" type="Node"]
 script = ExtResource("1_gdpl4")
 
+[node name="PanelContainer" type="PanelContainer" parent="."]
+offset_left = 309.0
+offset_top = 168.0
+offset_right = 772.0
+offset_bottom = 489.0
+
 [node name="question" type="Label" parent="."]
 offset_left = 370.0
 offset_top = 195.0
