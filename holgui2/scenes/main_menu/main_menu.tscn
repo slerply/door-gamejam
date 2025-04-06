@@ -1,7 +1,16 @@
-[gd_scene load_steps=7 format=3 uid="uid://cw1hulvy03xwd"]
+[gd_scene load_steps=12 format=3 uid="uid://cw1hulvy03xwd"]
 
 [ext_resource type="Script" uid="uid://c5deqy2m01deo" path="res://scenes/main_menu/main_menu.gd" id="1_fsom3"]
 [ext_resource type="Texture2D" uid="uid://e8yi2071jktf" path="res://imports/assets/approach_visualisations/deathhands_spritesheet.png" id="2_0ebjn"]
+[ext_resource type="Texture2D" uid="uid://c8kb2v76eoosy" path="res://imports/assets/doorOpenAnim1.png" id="2_ob46e"]
+[ext_resource type="Shader" uid="uid://c768q1ajg720f" path="res://imports/assets/shader/dark_noise.gdshader" id="4_uqeha"]
+
+[sub_resource type="Gradient" id="Gradient_wem23"]
+colors = PackedColorArray(0.227451, 0, 0, 1, 0.273873, 0.273873, 0.273873, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ob46e"]
+gradient = SubResource("Gradient_wem23")
+fill_from = Vector2(0, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ob46e"]
 atlas = ExtResource("2_0ebjn")
@@ -32,6 +41,12 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3ovsr"]
+shader = ExtResource("4_uqeha")
+shader_parameter/radius = -0.525
+shader_parameter/speed = 3.497
+shader_parameter/effect_color = Color(0.251, 0, 0, 1)
+
 [node name="MainMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -41,6 +56,44 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_fsom3")
 
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.176419, 0.176419, 0.176419, 0.466667)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_ob46e")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+self_modulate = Color(1, 1, 1, 0.376471)
+custom_minimum_size = Vector2(80, 130)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -112.465
+offset_right = 40.0
+offset_bottom = 17.535
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_ob46e")
+
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -48,7 +101,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_bottom = 150
+theme_override_constants/margin_bottom = 115
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
@@ -63,10 +116,11 @@ text = "Play"
 
 [node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_constants/separation = 40
+theme_override_constants/separation = 20
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_constants/separation = 25
 
 [node name="OptionsButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 texture_filter = 2
@@ -84,6 +138,35 @@ text = "Quit"
 position = Vector2(577, 328)
 scale = Vector2(9.01563, 9.4)
 sprite_frames = SubResource("SpriteFrames_3ovsr")
+autoplay = "default"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+texture_filter = 2
+custom_minimum_size = Vector2(500, 200)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -250.0
+offset_top = 25.0
+offset_right = 250.0
+offset_bottom = 225.0
+grow_horizontal = 2
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 46
+text = "Don't Look Back"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DarkNoise(test)" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_3ovsr")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
