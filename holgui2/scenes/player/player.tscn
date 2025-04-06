@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dcqektpmu5r8x" path="res://scenes/player/player.gd" id="1_dovo2"]
 [ext_resource type="Shader" uid="uid://c7r136ave1m54" path="res://imports/assets/shader/fog.gdshader" id="2_gmlin"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_xolto"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dovo2"]
 render_priority = 0
 shader = ExtResource("2_gmlin")
 shader_parameter/enable_fog = true
@@ -19,7 +19,7 @@ shader_parameter/enable_dithering = true
 shader_parameter/dither_strength = 1.0
 
 [sub_resource type="QuadMesh" id="QuadMesh_lvxji"]
-material = SubResource("ShaderMaterial_xolto")
+material = SubResource("ShaderMaterial_dovo2")
 flip_faces = true
 size = Vector2(2, 2)
 
