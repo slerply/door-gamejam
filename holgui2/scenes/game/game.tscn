@@ -55,7 +55,7 @@ grow_vertical = 2
 
 [node name="MathMinigame" parent="MinigameController" instance=ExtResource("12_5v6r0")]
 
-[node name="Node2D" parent="MinigameController" instance=ExtResource("13_uyinl")]
+[node name="numpad" parent="MinigameController" instance=ExtResource("13_uyinl")]
 
 [node name="QuicktypeMinigame" parent="MinigameController" instance=ExtResource("10_4j704")]
 

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ctlsl4m22n0h" path="res://scenes/minigames/Numpad/numpad.gd" id="1_qj2vo"]
 
-[node name="Node2D" type="Node2D"]
+[node name="numpad" type="Node2D"]
 script = ExtResource("1_qj2vo")
 
 [node name="Button" type="Button" parent="."]
@@ -10,24 +10,29 @@ offset_left = 368.0
 offset_top = 128.0
 offset_right = 498.0
 offset_bottom = 258.0
+theme_override_font_sizes/font_size = 80
+text = "a"
 
 [node name="Button2" type="Button" parent="."]
 offset_left = 504.0
 offset_top = 128.0
 offset_right = 634.0
 offset_bottom = 258.0
+theme_override_font_sizes/font_size = 80
 
 [node name="Button3" type="Button" parent="."]
 offset_left = 640.0
 offset_top = 128.0
 offset_right = 770.0
 offset_bottom = 258.0
+theme_override_font_sizes/font_size = 80
 
 [node name="Button4" type="Button" parent="."]
 offset_left = 368.0
 offset_top = 264.0
 offset_right = 498.0
 offset_bottom = 394.0
+theme_override_font_sizes/font_size = 80
 metadata/_edit_use_anchors_ = true
 
 [node name="Button5" type="Button" parent="."]
@@ -35,6 +40,7 @@ offset_left = 504.0
 offset_top = 264.0
 offset_right = 634.0
 offset_bottom = 394.0
+theme_override_font_sizes/font_size = 80
 metadata/_edit_use_anchors_ = true
 
 [node name="Button6" type="Button" parent="."]
@@ -42,6 +48,7 @@ offset_left = 640.0
 offset_top = 264.0
 offset_right = 770.0
 offset_bottom = 394.0
+theme_override_font_sizes/font_size = 80
 metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect" type="ColorRect" parent="."]

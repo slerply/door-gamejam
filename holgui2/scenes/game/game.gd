@@ -61,6 +61,7 @@ func handle_deathtimer(_delta: float) -> void:
 
 func _on_all_minigames_finished() -> void:
 	minigame_finished = true
+	$CorridorSpawner.corridor_count = randi_range(1,10)
 	print("on_all_minigames_finished")
 
 func _on_minigame_finished() -> void:
