@@ -17,7 +17,7 @@ scale = Vector2(0.592267, 0.613946)
 texture = ExtResource("2_4b80i")
 
 [node name="Lock" type="Sprite2D" parent="."]
-position = Vector2(1064, 298)
+position = Vector2(947, 288)
 texture = ExtResource("3_74v82")
 
 [node name="deathArea" type="Area2D" parent="."]
@@ -33,7 +33,7 @@ collision_layer = 256
 collision_mask = 256
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="winArea"]
-position = Vector2(1165, 295)
+position = Vector2(1001, 300)
 shape = SubResource("RectangleShape2D_4b80i")
 
 [node name="hotWireStart" type="Node2D" parent="."]

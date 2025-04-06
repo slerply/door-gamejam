@@ -6,7 +6,7 @@
 [ext_resource type="Shader" uid="uid://c768q1ajg720f" path="res://imports/assets/shader/dark_noise.gdshader" id="4_kelw5"]
 [ext_resource type="PackedScene" uid="uid://b2ughig1no0g5" path="res://scenes/detah_proximity_effects/death_hands_close.tscn" id="5_lfrn8"]
 [ext_resource type="PackedScene" uid="uid://bl2l61luf2egi" path="res://scenes/minigames/minigame_controller/minigame_controller.tscn" id="6_2a8rs"]
-[ext_resource type="PackedScene" uid="uid://uyoief80yc4o" path="res://scenes/minigames/spin_minigame/spin_minigame.tscn" id="7_kp23o"]
+[ext_resource type="PackedScene" uid="uid://ucrgyl7tidqs" path="res://scenes/minigames/sizeSort_minigame/SizeSort_minigame.tscn" id="7_bdhmt"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lfrn8"]
 shader = ExtResource("4_kelw5")
@@ -24,6 +24,7 @@ scale = Vector2(9, 9.25714)
 [node name="Player" parent="." instance=ExtResource("2_7h61r")]
 
 [node name="CorridorSpawner" parent="." instance=ExtResource("2_0sr1o")]
+corridor_count = 2
 
 [node name="DarkNoise(test)" type="ColorRect" parent="."]
 visible = false
@@ -36,7 +37,7 @@ grow_vertical = 2
 
 [node name="MinigameController" parent="." instance=ExtResource("6_2a8rs")]
 
-[node name="SpinMinigame" parent="MinigameController" instance=ExtResource("7_kp23o")]
+[node name="SizeSortMinigame" parent="MinigameController" instance=ExtResource("7_bdhmt")]
 
 [node name="Deathtimer" type="Label" parent="."]
 offset_left = 516.0

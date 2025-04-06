@@ -1,3 +1,135 @@
-[gd_scene format=3 uid="uid://ucrgyl7tidqs"]
+[gd_scene load_steps=5 format=3 uid="uid://ucrgyl7tidqs"]
+
+[ext_resource type="Script" uid="uid://w3o0kotqscg5" path="res://scenes/minigames/sizeSort_minigame/size_sort_minigame.gd" id="1_m8x7x"]
+[ext_resource type="Script" uid="uid://drjyyr1uqrl8n" path="res://scenes/minigames/sizeSort_minigame/button.gd" id="2_5sqmx"]
+[ext_resource type="Texture2D" uid="uid://c8kb2v76eoosy" path="res://imports/assets/doorOpenAnim1.png" id="2_kti5f"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_5sqmx"]
 
 [node name="SizeSortMinigame" type="Node"]
+script = ExtResource("1_m8x7x")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -326.0
+offset_top = 84.0
+offset_right = -286.0
+offset_bottom = 124.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(15.4532, 0.201737)
+size_flags_horizontal = 4
+texture = SubResource("CanvasTexture_5sqmx")
+
+[node name="minPos" type="Node2D" parent="."]
+position = Vector2(227, 88)
+
+[node name="maxPos" type="Node2D" parent="."]
+position = Vector2(901, 319)
+
+[node name="smal" type="Button" parent="."]
+custom_minimum_size = Vector2(50, 70)
+offset_left = 800.0
+offset_top = 292.0
+offset_right = 850.0
+offset_bottom = 372.0
+script = ExtResource("2_5sqmx")
+
+[node name="DoorOpenAnim1" type="Sprite2D" parent="smal"]
+modulate = Color(1, 0.321569, 1, 1)
+position = Vector2(24, 39.5)
+scale = Vector2(1.6, 1.6875)
+texture = ExtResource("2_kti5f")
+
+[node name="reenable_button_delay_a" type="Timer" parent="smal"]
+wait_time = 0.2
+one_shot = true
+
+[node name="smalMid" type="Button" parent="."]
+custom_minimum_size = Vector2(50, 100)
+offset_left = 321.0
+offset_top = 289.0
+offset_right = 371.0
+offset_bottom = 389.0
+script = ExtResource("2_5sqmx")
+
+[node name="reenable_button_delay_a" type="Timer" parent="smalMid"]
+wait_time = 0.2
+one_shot = true
+
+[node name="DoorOpenAnim1" type="Sprite2D" parent="smalMid"]
+modulate = Color(0.678431, 0.247059, 1, 1)
+position = Vector2(24.5, 48.5)
+scale = Vector2(1.63333, 2.0625)
+texture = ExtResource("2_kti5f")
+
+[node name="mid" type="Button" parent="."]
+custom_minimum_size = Vector2(50, 120)
+offset_left = 264.0
+offset_top = 88.0
+offset_right = 314.0
+offset_bottom = 208.0
+script = ExtResource("2_5sqmx")
+
+[node name="reenable_button_delay_a" type="Timer" parent="mid"]
+wait_time = 0.2
+one_shot = true
+
+[node name="DoorOpenAnim1" type="Sprite2D" parent="mid"]
+modulate = Color(0.6, 0.611765, 1, 1)
+position = Vector2(25.5, 60)
+scale = Vector2(1.7, 2.54167)
+texture = ExtResource("2_kti5f")
+
+[node name="midBig" type="Button" parent="."]
+custom_minimum_size = Vector2(50, 130)
+offset_left = 667.0
+offset_top = 231.0
+offset_right = 717.0
+offset_bottom = 361.0
+script = ExtResource("2_5sqmx")
+
+[node name="reenable_button_delay_a" type="Timer" parent="midBig"]
+wait_time = 0.2
+one_shot = true
+
+[node name="DoorOpenAnim1" type="Sprite2D" parent="midBig"]
+modulate = Color(0.788235, 0.807843, 1, 1)
+position = Vector2(25, 64)
+scale = Vector2(1.66667, 2.70833)
+texture = ExtResource("2_kti5f")
+
+[node name="big" type="Button" parent="."]
+custom_minimum_size = Vector2(50, 200)
+offset_left = 569.0
+offset_top = 119.0
+offset_right = 619.0
+offset_bottom = 319.0
+script = ExtResource("2_5sqmx")
+
+[node name="reenable_button_delay_a" type="Timer" parent="big"]
+wait_time = 0.2
+one_shot = true
+
+[node name="DoorOpenAnim1" type="Sprite2D" parent="big"]
+position = Vector2(25, 100.5)
+scale = Vector2(1.66667, 4.22917)
+texture = ExtResource("2_kti5f")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 494.0
+offset_top = 430.0
+offset_right = 604.0
+offset_bottom = 499.0
+theme_override_font_sizes/font_size = 50
+text = "sort!"
+
+[connection signal="timeout" from="smal/reenable_button_delay_a" to="smal" method="_on_reenable_button_delay_a_timeout"]
+[connection signal="timeout" from="smalMid/reenable_button_delay_a" to="smalMid" method="_on_reenable_button_delay_a_timeout"]
+[connection signal="timeout" from="mid/reenable_button_delay_a" to="mid" method="_on_reenable_button_delay_a_timeout"]
+[connection signal="timeout" from="midBig/reenable_button_delay_a" to="midBig" method="_on_reenable_button_delay_a_timeout"]
+[connection signal="timeout" from="big/reenable_button_delay_a" to="big" method="_on_reenable_button_delay_a_timeout"]
