@@ -1,6 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://p8bynsxcps28"]
+[gd_scene load_steps=8 format=3 uid="uid://p8bynsxcps28"]
 
 [ext_resource type="Script" uid="uid://d3ap7262mxjpb" path="res://scenes/options_menu/options_menu.gd" id="1_sglii"]
+[ext_resource type="Theme" uid="uid://dplp7d5j6ai8m" path="res://data/button_theme.tres" id="2_44mp6"]
+[ext_resource type="FontFile" uid="uid://dqrmhc5gkblyu" path="res://imports/assets/fonts/Horrormaster-o10V.ttf" id="2_pyb0l"]
 [ext_resource type="Shader" uid="uid://c768q1ajg720f" path="res://imports/assets/shader/dark_noise.gdshader" id="2_yv8em"]
 
 [sub_resource type="Gradient" id="Gradient_0ebjn"]
@@ -69,6 +71,7 @@ layout_mode = 2
 [node name="SoundVolumeLabel" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer2"]
 texture_filter = 2
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_pyb0l")
 text = "Sound Volume"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -83,6 +86,7 @@ value = 1.0
 texture_filter = 2
 custom_minimum_size = Vector2(120, 50)
 layout_mode = 2
+theme = ExtResource("2_44mp6")
 text = "Back"
 
 [node name="DarkNoise(test)" type="ColorRect" parent="."]

@@ -11,7 +11,8 @@ extends Node
 var total_minigames: int = 3
 
 var start_contingent = 24.0
-var bonus_per_minigame = 1.5
+var bonus_per_minigame = 2
+var bonus_per_door = 5
 
 var number_minigames = 1 # remove variable from MinigameController
 var deathtimer: float
@@ -71,6 +72,7 @@ func _on_all_minigames_finished() -> void:
 	minigame_finished = true
 	$CorridorSpawner.corridor_count = randi_range(1,10)
 	print("on_all_minigames_finished")
+	deathtimer += bonus_per_door
 
 func _on_minigame_finished() -> void:
 	print("on_minigame_finished")

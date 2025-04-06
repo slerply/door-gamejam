@@ -29,6 +29,7 @@ script = ExtResource("1_0sr1o")
 [node name="ScaryHandler" parent="." instance=ExtResource("2_3xj4h")]
 
 [node name="deathHandsClose" parent="." instance=ExtResource("5_lfrn8")]
+visible = false
 position = Vector2(576, 335)
 scale = Vector2(9, 9.25714)
 
