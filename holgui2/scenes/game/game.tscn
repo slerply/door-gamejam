@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://xu1e14kc8gor"]
+[gd_scene load_steps=17 format=3 uid="uid://xu1e14kc8gor"]
 
 [ext_resource type="Script" uid="uid://dkarw5vss5yuq" path="res://scenes/game/game.gd" id="1_0sr1o"]
 [ext_resource type="PackedScene" uid="uid://bt7nfg8225okf" path="res://scenes/corridor_spawner/corridor_spawner.tscn" id="2_0sr1o"]
@@ -6,7 +6,15 @@
 [ext_resource type="Shader" uid="uid://c768q1ajg720f" path="res://imports/assets/shader/dark_noise.gdshader" id="4_kelw5"]
 [ext_resource type="PackedScene" uid="uid://b2ughig1no0g5" path="res://scenes/detah_proximity_effects/death_hands_close.tscn" id="5_lfrn8"]
 [ext_resource type="PackedScene" uid="uid://bl2l61luf2egi" path="res://scenes/minigames/minigame_controller/minigame_controller.tscn" id="6_2a8rs"]
+[ext_resource type="PackedScene" uid="uid://bqn0roh6ujqdm" path="res://scenes/minigames/hotWire/hotwire_minigame.tscn" id="7_4j704"]
 [ext_resource type="PackedScene" uid="uid://b5igh8ej6p10s" path="res://scenes/minigames/Aimtrainer/aimtrainer.tscn" id="7_bdhmt"]
+[ext_resource type="Script" uid="uid://psctm7r8nb55" path="res://scenes/minigames/spin_minigame/spin_minigame.gd" id="7_otnwt"]
+[ext_resource type="PackedScene" uid="uid://vdrn2ll11m8x" path="res://scenes/minigames/cardswipe_minigame/cardswipe_minigame.tscn" id="9_2a8rs"]
+[ext_resource type="PackedScene" uid="uid://b01u8dg3guwjo" path="res://scenes/minigames/aiCaptcha_minigame/Ai-Captcha_minigame.tscn" id="9_3xj4h"]
+[ext_resource type="PackedScene" uid="uid://ceingjatjkqdb" path="res://scenes/minigames/quick_type_minigame/quicktype_minigame.tscn" id="10_4j704"]
+[ext_resource type="PackedScene" uid="uid://dxxcap8d28whk" path="res://scenes/minigames/math_minigame/math_minigame.tscn" id="12_5v6r0"]
+[ext_resource type="PackedScene" uid="uid://og2y1qajmvx4" path="res://scenes/minigames/Numpad/numpad.tscn" id="13_uyinl"]
+[ext_resource type="PackedScene" uid="uid://ucrgyl7tidqs" path="res://scenes/minigames/sizeSort_minigame/SizeSort_minigame.tscn" id="15_10c2w"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lfrn8"]
 shader = ExtResource("4_kelw5")
@@ -36,8 +44,23 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="MinigameController" parent="." instance=ExtResource("6_2a8rs")]
+script = ExtResource("7_otnwt")
 
 [node name="Aimtrainer" parent="MinigameController" instance=ExtResource("7_bdhmt")]
+
+[node name="Ai-Captcha_minigame" parent="MinigameController" instance=ExtResource("9_3xj4h")]
+
+[node name="CardswipeMinigame" parent="MinigameController" instance=ExtResource("9_2a8rs")]
+
+[node name="HotwireMinigame" parent="MinigameController" instance=ExtResource("7_4j704")]
+
+[node name="MathMinigame" parent="MinigameController" instance=ExtResource("12_5v6r0")]
+
+[node name="Node2D" parent="MinigameController" instance=ExtResource("13_uyinl")]
+
+[node name="QuicktypeMinigame" parent="MinigameController" instance=ExtResource("10_4j704")]
+
+[node name="SizeSortMinigame" parent="MinigameController" instance=ExtResource("15_10c2w")]
 
 [node name="Deathtimer" type="Label" parent="."]
 offset_left = 516.0
