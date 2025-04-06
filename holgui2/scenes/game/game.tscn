@@ -67,6 +67,7 @@ grow_vertical = 2
 [node name="SpinMinigame" parent="MinigameController" instance=ExtResource("15_otnwt")]
 
 [node name="Deathtimer" type="Label" parent="."]
+visible = false
 offset_left = 516.0
 offset_top = 609.0
 offset_right = 674.0

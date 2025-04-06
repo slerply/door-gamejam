@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://cw1hulvy03xwd"]
+[gd_scene load_steps=13 format=3 uid="uid://cw1hulvy03xwd"]
 
 [ext_resource type="Script" uid="uid://c5deqy2m01deo" path="res://scenes/main_menu/main_menu.gd" id="1_fsom3"]
 [ext_resource type="Texture2D" uid="uid://e8yi2071jktf" path="res://imports/assets/approach_visualisations/deathhands_spritesheet.png" id="2_0ebjn"]
 [ext_resource type="Texture2D" uid="uid://c8kb2v76eoosy" path="res://imports/assets/doorOpenAnim1.png" id="2_ob46e"]
+[ext_resource type="Theme" uid="uid://dplp7d5j6ai8m" path="res://data/button_theme.tres" id="3_wem23"]
 [ext_resource type="Shader" uid="uid://c768q1ajg720f" path="res://imports/assets/shader/dark_noise.gdshader" id="4_uqeha"]
 
 [sub_resource type="Gradient" id="Gradient_wem23"]
@@ -112,6 +113,7 @@ size_flags_vertical = 8
 texture_filter = 2
 custom_minimum_size = Vector2(120, 50)
 layout_mode = 2
+theme = ExtResource("3_wem23")
 text = "Play"
 
 [node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer"]

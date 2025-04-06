@@ -10,7 +10,7 @@ extends Node
 
 var total_minigames: int = 3
 
-var start_contingent = 2.0#24.0
+var start_contingent = 24.0
 var bonus_per_minigame = 1.5
 
 var number_minigames = 1 # remove variable from MinigameController
