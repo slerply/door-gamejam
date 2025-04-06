@@ -1,11 +1,25 @@
-[gd_scene load_steps=7 format=3 uid="uid://xu1e14kc8gor"]
+[gd_scene load_steps=17 format=3 uid="uid://xu1e14kc8gor"]
 
 [ext_resource type="Script" uid="uid://dkarw5vss5yuq" path="res://scenes/game/game.gd" id="1_0sr1o"]
 [ext_resource type="PackedScene" uid="uid://bt7nfg8225okf" path="res://scenes/corridor_spawner/corridor_spawner.tscn" id="2_0sr1o"]
 [ext_resource type="PackedScene" uid="uid://b0ljco5gdno31" path="res://scenes/game/scary_handler/scary_handler.tscn" id="2_5i0tg"]
 [ext_resource type="PackedScene" uid="uid://brlbt4uwo7n02" path="res://scenes/player/player.tscn" id="2_7h61r"]
 [ext_resource type="PackedScene" uid="uid://bl2l61luf2egi" path="res://scenes/minigames/minigame_controller/minigame_controller.tscn" id="6_2a8rs"]
-[ext_resource type="PackedScene" uid="uid://cji247ycc1k6w" path="res://scenes/minigames/LukeTest/Luke_test2d.tscn" id="7_bdhmt"]
+[ext_resource type="PackedScene" uid="uid://bqn0roh6ujqdm" path="res://scenes/minigames/hotWire/hotwire_minigame.tscn" id="7_4j704"]
+[ext_resource type="PackedScene" uid="uid://b5igh8ej6p10s" path="res://scenes/minigames/Aimtrainer/aimtrainer.tscn" id="7_bdhmt"]
+[ext_resource type="PackedScene" uid="uid://vdrn2ll11m8x" path="res://scenes/minigames/cardswipe_minigame/cardswipe_minigame.tscn" id="9_2a8rs"]
+[ext_resource type="PackedScene" uid="uid://b01u8dg3guwjo" path="res://scenes/minigames/aiCaptcha_minigame/Ai-Captcha_minigame.tscn" id="9_3xj4h"]
+[ext_resource type="PackedScene" uid="uid://ceingjatjkqdb" path="res://scenes/minigames/quick_type_minigame/quicktype_minigame.tscn" id="10_4j704"]
+[ext_resource type="PackedScene" uid="uid://dxxcap8d28whk" path="res://scenes/minigames/math_minigame/math_minigame.tscn" id="12_5v6r0"]
+[ext_resource type="PackedScene" uid="uid://og2y1qajmvx4" path="res://scenes/minigames/Numpad/numpad.tscn" id="13_uyinl"]
+[ext_resource type="PackedScene" uid="uid://ucrgyl7tidqs" path="res://scenes/minigames/sizeSort_minigame/SizeSort_minigame.tscn" id="15_10c2w"]
+[ext_resource type="PackedScene" uid="uid://uyoief80yc4o" path="res://scenes/minigames/spin_minigame/spin_minigame.tscn" id="15_otnwt"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lfrn8"]
+shader = ExtResource("4_kelw5")
+shader_parameter/radius = -0.48
+shader_parameter/speed = 2.124
+shader_parameter/effect_color = Color(0.251, 0, 0, 1)
 
 [node name="Game" type="Node"]
 script = ExtResource("1_0sr1o")
@@ -15,10 +29,27 @@ script = ExtResource("1_0sr1o")
 [node name="Player" parent="." instance=ExtResource("2_7h61r")]
 
 [node name="CorridorSpawner" parent="." instance=ExtResource("2_0sr1o")]
+corridor_count = 2
 
 [node name="MinigameController" parent="." instance=ExtResource("6_2a8rs")]
 
-[node name="LukeTest2d" parent="MinigameController" instance=ExtResource("7_bdhmt")]
+[node name="Aimtrainer" parent="MinigameController" instance=ExtResource("7_bdhmt")]
+
+[node name="Ai-Captcha_minigame" parent="MinigameController" instance=ExtResource("9_3xj4h")]
+
+[node name="CardswipeMinigame" parent="MinigameController" instance=ExtResource("9_2a8rs")]
+
+[node name="HotwireMinigame" parent="MinigameController" instance=ExtResource("7_4j704")]
+
+[node name="MathMinigame" parent="MinigameController" instance=ExtResource("12_5v6r0")]
+
+[node name="numpad" parent="MinigameController" instance=ExtResource("13_uyinl")]
+
+[node name="QuicktypeMinigame" parent="MinigameController" instance=ExtResource("10_4j704")]
+
+[node name="SizeSortMinigame" parent="MinigameController" instance=ExtResource("15_10c2w")]
+
+[node name="SpinMinigame" parent="MinigameController" instance=ExtResource("15_otnwt")]
 
 [node name="Deathtimer" type="Label" parent="."]
 visible = false
