@@ -44,27 +44,6 @@ offset_right = 770.0
 offset_bottom = 394.0
 metadata/_edit_use_anchors_ = true
 
-[node name="Button7" type="Button" parent="."]
-offset_left = 368.0
-offset_top = 400.0
-offset_right = 498.0
-offset_bottom = 530.0
-metadata/_edit_use_anchors_ = true
-
-[node name="Button8" type="Button" parent="."]
-offset_left = 504.0
-offset_top = 400.0
-offset_right = 634.0
-offset_bottom = 530.0
-metadata/_edit_use_anchors_ = true
-
-[node name="Button9" type="Button" parent="."]
-offset_left = 640.0
-offset_top = 400.0
-offset_right = 770.0
-offset_bottom = 530.0
-metadata/_edit_use_anchors_ = true
-
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = 368.0
 offset_top = 56.0
