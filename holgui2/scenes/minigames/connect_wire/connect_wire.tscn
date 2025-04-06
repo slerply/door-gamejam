@@ -48,8 +48,11 @@ layout_mode = 2
 theme_override_constants/separation = 100
 
 [node name="WireLeft1" type="Button" parent="Control/Panel/WiresLeft/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(60, 30)
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 
 [node name="ColorRect" type="ColorRect" parent="Control/Panel/WiresLeft/MarginContainer/VBoxContainer/WireLeft1"]
 layout_mode = 1
@@ -61,6 +64,7 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="WireLeft2" type="Button" parent="Control/Panel/WiresLeft/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(60, 30)
 layout_mode = 2
 
@@ -74,6 +78,7 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="WireLeft3" type="Button" parent="Control/Panel/WiresLeft/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(60, 30)
 layout_mode = 2
 
@@ -87,6 +92,7 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="WireLeft4" type="Button" parent="Control/Panel/WiresLeft/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(60, 30)
 layout_mode = 2
 
@@ -122,9 +128,10 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_top = -20.0
-offset_right = 40.0
-offset_bottom = 20.0
+offset_left = -25.0
+offset_top = -210.0
+offset_right = 35.0
+offset_bottom = 210.0
 grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control/Panel2/WiresRight/MarginContainer"]
@@ -132,6 +139,7 @@ layout_mode = 2
 theme_override_constants/separation = 100
 
 [node name="WireRight1" type="Button" parent="Control/Panel2/WiresRight/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(60, 30)
 layout_mode = 2
 
@@ -145,6 +153,7 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="WireRight2" type="Button" parent="Control/Panel2/WiresRight/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(60, 30)
 layout_mode = 2
 
@@ -158,6 +167,7 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="WireRight3" type="Button" parent="Control/Panel2/WiresRight/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(60, 30)
 layout_mode = 2
 
@@ -171,6 +181,7 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="WireRight4" type="Button" parent="Control/Panel2/WiresRight/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(60, 30)
 layout_mode = 2
 
@@ -183,4 +194,15 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
+[connection signal="button_down" from="Control/Panel/WiresLeft/MarginContainer/VBoxContainer/WireLeft1" to="." method="_on_wire_left_1_button_down"]
 [connection signal="pressed" from="Control/Panel/WiresLeft/MarginContainer/VBoxContainer/WireLeft1" to="." method="_on_wire_left_1_pressed"]
+[connection signal="button_down" from="Control/Panel/WiresLeft/MarginContainer/VBoxContainer/WireLeft2" to="." method="_on_wire_left_2_button_down"]
+[connection signal="pressed" from="Control/Panel/WiresLeft/MarginContainer/VBoxContainer/WireLeft2" to="." method="_on_wire_left_2_pressed"]
+[connection signal="button_down" from="Control/Panel/WiresLeft/MarginContainer/VBoxContainer/WireLeft3" to="." method="_on_wire_left_3_button_down"]
+[connection signal="pressed" from="Control/Panel/WiresLeft/MarginContainer/VBoxContainer/WireLeft3" to="." method="_on_wire_left_3_pressed"]
+[connection signal="button_down" from="Control/Panel/WiresLeft/MarginContainer/VBoxContainer/WireLeft4" to="." method="_on_wire_left_4_button_down"]
+[connection signal="pressed" from="Control/Panel/WiresLeft/MarginContainer/VBoxContainer/WireLeft4" to="." method="_on_wire_left_4_pressed"]
+[connection signal="pressed" from="Control/Panel2/WiresRight/MarginContainer/VBoxContainer/WireRight1" to="." method="_on_wire_right_1_pressed"]
+[connection signal="pressed" from="Control/Panel2/WiresRight/MarginContainer/VBoxContainer/WireRight2" to="." method="_on_wire_right_2_pressed"]
+[connection signal="pressed" from="Control/Panel2/WiresRight/MarginContainer/VBoxContainer/WireRight3" to="." method="_on_wire_right_3_pressed"]
+[connection signal="pressed" from="Control/Panel2/WiresRight/MarginContainer/VBoxContainer/WireRight4" to="." method="_on_wire_right_4_pressed"]
