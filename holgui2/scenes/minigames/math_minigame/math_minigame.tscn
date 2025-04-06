@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://dxxcap8d28whk"]
+
+[ext_resource type="Script" uid="uid://lvyx6nkcrgjb" path="res://scenes/minigames/math_minigame/math_minigame.gd" id="1_gdpl4"]
+
+[node name="MathMinigame" type="Node"]
+script = ExtResource("1_gdpl4")
+
+[node name="question" type="Label" parent="."]
+offset_left = 370.0
+offset_top = 195.0
+offset_right = 423.0
+offset_bottom = 228.0
+scale = Vector2(6.22481, 3.25412)
+
+[node name="solution" type="LineEdit" parent="."]
+offset_left = 403.0
+offset_top = 316.0
+offset_right = 471.563
+offset_bottom = 347.0
+scale = Vector2(3.68899, 3.27946)
+alignment = 2
