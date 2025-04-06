@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://b0ljco5gdno31"]
+[gd_scene load_steps=53 format=4 uid="uid://b0ljco5gdno31"]
 
 [ext_resource type="Script" uid="uid://cm6hteffpcqo1" path="res://scenes/game/scary_handler/scary_handler.gd" id="1_yq130"]
 [ext_resource type="AudioStream" uid="uid://kbp76h4554g5" path="res://imports/assets/sounds/breathing.wav" id="2_yq130"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://e8yi2071jktf" path="res://imports/assets/approach_visualisations/deathhands_spritesheet.png" id="8_7e03a"]
 [ext_resource type="FontFile" uid="uid://8nncbk1x6w2u" path="res://imports/assets/fonts/Horrorfind-gp0Y.ttf" id="8_pd2lu"]
 [ext_resource type="FontFile" uid="uid://dqrmhc5gkblyu" path="res://imports/assets/fonts/Horrormaster-o10V.ttf" id="9_3fm4h"]
+[ext_resource type="Theme" uid="uid://dplp7d5j6ai8m" path="res://data/button_theme.tres" id="10_3fm4h"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1pfj2"]
 atlas = ExtResource("7_7e03a")
@@ -824,6 +825,7 @@ offset_right = 88.0
 offset_bottom = 190.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("10_3fm4h")
 text = "Back to Menu"
 
 [node name="Blood" type="ColorRect" parent="."]

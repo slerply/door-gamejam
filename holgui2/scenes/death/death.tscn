@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://gukbibl6nrj" path="res://scenes/death/death.gd" id="1_h1f6h"]
 [ext_resource type="Texture2D" uid="uid://ccoo2twrks17y" path="res://scenes/death/maxresdefault.jpg" id="1_xmstb"]
 
-
 [node name="Death" type="Node2D"]
 script = ExtResource("1_h1f6h")
 

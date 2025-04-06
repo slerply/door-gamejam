@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://cw1hulvy03xwd"]
+[gd_scene load_steps=14 format=3 uid="uid://cw1hulvy03xwd"]
 
 [ext_resource type="Script" uid="uid://c5deqy2m01deo" path="res://scenes/main_menu/main_menu.gd" id="1_fsom3"]
 [ext_resource type="Texture2D" uid="uid://e8yi2071jktf" path="res://imports/assets/approach_visualisations/deathhands_spritesheet.png" id="2_0ebjn"]
 [ext_resource type="Texture2D" uid="uid://c8kb2v76eoosy" path="res://imports/assets/doorOpenAnim1.png" id="2_ob46e"]
 [ext_resource type="Theme" uid="uid://dplp7d5j6ai8m" path="res://data/button_theme.tres" id="3_wem23"]
 [ext_resource type="Shader" uid="uid://c768q1ajg720f" path="res://imports/assets/shader/dark_noise.gdshader" id="4_uqeha"]
+[ext_resource type="FontFile" uid="uid://dqrmhc5gkblyu" path="res://imports/assets/fonts/Horrormaster-o10V.ttf" id="5_3ovsr"]
 
 [sub_resource type="Gradient" id="Gradient_wem23"]
 colors = PackedColorArray(0.227451, 0, 0, 1, 0.273873, 0.273873, 0.273873, 1)
@@ -87,9 +88,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -40.0
-offset_top = -112.465
+offset_top = -137.83
 offset_right = 40.0
-offset_bottom = 17.535
+offset_bottom = -7.83002
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -102,7 +103,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_bottom = 115
+theme_override_constants/margin_bottom = 45
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
@@ -114,6 +115,8 @@ texture_filter = 2
 custom_minimum_size = Vector2(120, 50)
 layout_mode = 2
 theme = ExtResource("3_wem23")
+theme_override_fonts/font = ExtResource("5_3ovsr")
+theme_override_font_sizes/font_size = 31
 text = "Play"
 
 [node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer"]
@@ -128,13 +131,39 @@ theme_override_constants/separation = 25
 texture_filter = 2
 custom_minimum_size = Vector2(120, 50)
 layout_mode = 2
+theme = ExtResource("3_wem23")
+theme_override_fonts/font = ExtResource("5_3ovsr")
+theme_override_font_sizes/font_size = 31
 text = "Options"
 
 [node name="QuitButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 texture_filter = 2
 custom_minimum_size = Vector2(120, 50)
 layout_mode = 2
+theme = ExtResource("3_wem23")
+theme_override_fonts/font = ExtResource("5_3ovsr")
+theme_override_font_sizes/font_size = 31
 text = "Quit"
+
+[node name="HSeparator2" type="HSeparator" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
+texture_filter = 2
+custom_minimum_size = Vector2(0, 27.155)
+layout_mode = 2
+text = "Game by"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 76.97)
+layout_mode = 2
+text = "Mark_Senna                 grillle
+Dezior                           yBread
+Zeusi
+"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(577, 328)
@@ -155,8 +184,9 @@ offset_right = 250.0
 offset_bottom = 225.0
 grow_horizontal = 2
 mouse_filter = 2
-theme_override_font_sizes/normal_font_size = 46
-text = "Don't Look Back"
+theme_override_fonts/normal_font = ExtResource("5_3ovsr")
+theme_override_font_sizes/normal_font_size = 76
+text = "Do Not Look Back"
 horizontal_alignment = 1
 vertical_alignment = 1
 
