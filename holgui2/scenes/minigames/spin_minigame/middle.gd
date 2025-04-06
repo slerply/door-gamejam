@@ -9,6 +9,7 @@ func _process(delta: float) -> void:
 	%progress.text = str(int(progress/4)) + " / "+ str(goal)
 	if(int(progress/4) == goal):
 		$"..".win()
+		progress = 0
 	if global_position.y >  get_global_mouse_position().y and current == 0:
 		current =1
 		progress += 1

@@ -1,5 +1,5 @@
 extends Minigame
-class_name Cardswipe_minigame
+class_name SizeSort_minigame
 
 
 
