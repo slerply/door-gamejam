@@ -36,6 +36,7 @@ grow_vertical = 2
 
 [node name="MinigameController" parent="." instance=ExtResource("6_2a8rs")]
 
+[node name="LukeTest2d" parent="MinigameController" instance=ExtResource("7_bdhmt")]
 [node name="Ai-Captcha_minigame" parent="MinigameController" instance=ExtResource("7_bdhmt")]
 
 [node name="Deathtimer" type="Label" parent="."]

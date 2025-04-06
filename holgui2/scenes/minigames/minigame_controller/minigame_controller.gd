@@ -9,6 +9,7 @@ var minigames: Dictionary = {}
 var sequence_minigames: Array = []
 var queue_minigames: Array = []
 signal all_minigames_finished
+signal minigame_finished
 
 func _ready() -> void:
 	controller = self
@@ -61,6 +62,7 @@ func stop_all_minigames():
 		stop_minigame(current_minigame)
 
 func on_child_finished(minigame):
+	minigame_finished.emit()
 	if minigame != current_minigame:
 		return
 	queue_minigames.remove_at(0) # removes first minigame from Queue

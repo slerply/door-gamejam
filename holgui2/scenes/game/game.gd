@@ -4,13 +4,15 @@ extends Node
 @onready var player: Node = $Player
 @onready var minigame_controller: MinigameController = $MinigameController
 
-# temp !
+# TODO remove when publish -> only temp for development
 @onready var deathtimer_label = $Deathtimer
 
 var total_minigames: int = 3
 
-var number_minigames = 1 # temp; get from minigame controller
-var time_per_minigame = 4.0 # in seconds
+var start_contingent = 12.0
+var bonus_per_minigame = 1.5
+
+var number_minigames = 1 # remove variable from MinigameController
 var deathtimer: float
 
 var minigame_started = false
@@ -19,15 +21,15 @@ var minigame_finished = false
 func _ready() -> void:
 	corridor_spawner.init_minigame.connect(init_minigame)
 	print("GAME ready")
-	minigame_controller.connect("all_minigames_finished", _on_minigame_finished)
-	_init_deathtimer()
+	minigame_controller.connect("all_minigames_finished", _on_all_minigames_finished)
+	minigame_controller.connect("minigame_finished", _on_minigame_finished)
+	deathtimer = start_contingent
 
 func init_minigame() -> void:
 	player.toggle_movement()
 	# open door
 	print("open door")
-	#get_tree().change_scene_to_file("res://scenes/game/door_open.tscn")
-	#await get_tree().create_timer(1.0).timeout
+	# TODO add animation
 	# start minigame
 	print("start_all_minigames")
 	minigame_controller.start_all_minigames(number_minigames)
@@ -43,7 +45,6 @@ func handle_deathtimer(_delta: float) -> void:
 	if minigame_finished:
 		print("SUCCESS >> ADD MORE")
 		number_minigames += 1
-		_init_deathtimer()
 		minigame_started = false
 		minigame_finished = false
 		player.reset()
@@ -58,12 +59,10 @@ func handle_deathtimer(_delta: float) -> void:
 		print("YOU DIED")
 		get_tree().change_scene_to_file("res://scenes/game/death.tscn")
 
-## reset the cooldown to original interval
-func _init_deathtimer() -> void:
-	deathtimer = (0.8 * number_minigames) * time_per_minigame
-	deathtimer_label.text = str(deathtimer)
-	print("_init_deathtimer = ", deathtimer)
+func _on_all_minigames_finished() -> void:
+	minigame_finished = true
+	print("on_all_minigames_finished")
 
 func _on_minigame_finished() -> void:
-	minigame_finished = true
-	print("_on_minigame_finished")
+	print("on_minigame_finished")
+	deathtimer += bonus_per_minigame
