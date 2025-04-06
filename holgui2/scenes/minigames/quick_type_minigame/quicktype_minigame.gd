@@ -1,7 +1,7 @@
 extends Minigame
 class_name Quicktype_minigame
 
-var words = ["door", "a", "mark", "emerald", "pale"]
+var words = ["jumpscare", "door", "quick quick", "key", "gamejam", "corridor", "hamburger", "chase", "xylophone", "faster", "highscore", "keyword", "password", "godot", "do not turn"]
 
 var currentWord = ""
 
