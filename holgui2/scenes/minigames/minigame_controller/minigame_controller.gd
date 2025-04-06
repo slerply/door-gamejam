@@ -2,7 +2,7 @@ extends Node
 class_name MinigameController
 
 ## count for all the active Minigames, needs to increase per completed door
-@export var count_minigame: int = 1 # TODO: change 
+@export var count_minigame: int = 1 
 var controller: MinigameController
 var current_minigame: Minigame
 var minigames: Dictionary = {}
@@ -55,7 +55,11 @@ func start_all_minigames(current_count_minigame = 1):
 	if !queue_minigames.is_empty():
 		current_minigame = minigames.get(queue_minigames[0].to_lower())
 		start_minigame(current_minigame)
-	
+
+func stop_all_minigames():
+	if current_minigame:
+		stop_minigame(current_minigame)
+
 func on_child_finished(minigame):
 	if minigame != current_minigame:
 		return
