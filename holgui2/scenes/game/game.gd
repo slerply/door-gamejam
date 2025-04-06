@@ -10,7 +10,7 @@ extends Node
 
 var total_minigames: int = 3
 
-var start_contingent = 12.0
+var start_contingent = 2.0#24.0
 var bonus_per_minigame = 1.5
 
 var number_minigames = 1 # remove variable from MinigameController
@@ -19,6 +19,7 @@ var deathtimer: float
 var minigame_started = false
 var minigame_finished = false
 var dead = false
+var score = 0
 
 signal current_deathtimer
 signal died
@@ -59,11 +60,11 @@ func handle_deathtimer(_delta: float) -> void:
 	# count timer down
 	elif deathtimer > 0:
 		deathtimer -= _delta
-	# emit "dead" when deathtimer runs out
+	# emit died when deathtimer runs out
 	elif deathtimer <= 0:
 		minigame_controller.stop_all_minigames()
 		print("YOU DIED")
-		died.emit()
+		died.emit(score)
 		dead = true
 
 func _on_all_minigames_finished() -> void:
@@ -73,3 +74,4 @@ func _on_all_minigames_finished() -> void:
 func _on_minigame_finished() -> void:
 	print("on_minigame_finished")
 	deathtimer += bonus_per_minigame
+	score += 1

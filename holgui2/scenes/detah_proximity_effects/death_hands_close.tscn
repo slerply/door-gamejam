@@ -187,5 +187,5 @@ animations = [{
 
 [node name="deathHandsClose" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_87uf6")
-animation = &"wiggle"
+animation = &"closing_in"
 script = ExtResource("3_6tjic")
