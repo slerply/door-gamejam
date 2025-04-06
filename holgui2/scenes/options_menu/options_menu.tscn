@@ -26,6 +26,7 @@ size_flags_vertical = 4
 theme_override_constants/separation = 20
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 
 [node name="MusicVolumeLabel" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer"]
@@ -51,7 +52,9 @@ vertical_alignment = 1
 
 [node name="SoundVolumeSlider" type="HSlider" parent="MarginContainer/VBoxContainer/VBoxContainer2"]
 layout_mode = 2
-value = 70.0
+max_value = 1.0
+step = 0.001
+value = 1.0
 
 [node name="BackButton" type="Button" parent="MarginContainer/VBoxContainer"]
 texture_filter = 2
@@ -59,4 +62,5 @@ custom_minimum_size = Vector2(120, 50)
 layout_mode = 2
 text = "Back"
 
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/VBoxContainer2/SoundVolumeSlider" to="." method="_on_sound_volume_slider_value_changed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
