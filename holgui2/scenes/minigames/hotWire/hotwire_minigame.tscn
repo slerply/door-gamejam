@@ -6,18 +6,18 @@
 [ext_resource type="Texture2D" uid="uid://d1c0pp12ttee" path="res://imports/assets/lock.png" id="3_74v82"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4b80i"]
-size = Vector2(237, 20)
+size = Vector2(31.5, 20)
 
 [node name="HotwireMinigame" type="Node2D"]
 script = ExtResource("1_g17bx")
 
 [node name="Zb" type="Sprite2D" parent="."]
-position = Vector2(561.565, 320.423)
-scale = Vector2(0.592267, 0.613946)
+position = Vector2(670, 295)
+scale = Vector2(3.816, 3.69531)
 texture = ExtResource("2_4b80i")
 
 [node name="Lock" type="Sprite2D" parent="."]
-position = Vector2(947, 288)
+position = Vector2(665, 341)
 texture = ExtResource("3_74v82")
 
 [node name="deathArea" type="Area2D" parent="."]
@@ -25,7 +25,8 @@ collision_layer = 8
 collision_mask = 8
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="deathArea"]
-polygon = PackedVector2Array(2, 100, 234, 96, 260, 113, 271, 159, 275, 248, 269, 360, 437, 358, 442, 183, 469, 167, 526, 154, 560, 168, 732, 159, 752, 171, 793, 174, 840, 196, 847, 223, 840, 259, 842, 356, 846, 386, 848, 441, 928, 428, 928, 298, 958, 283, 1063, 284, 1077, 301, 1069, 316, 971, 316, 960, 325, 960, 438, 972, 462, 965, 484, 936, 495, 878, 496, 833, 515, 802, 509, 788, 489, 780, 267, 553, 270, 543, 376, 540, 530, 527, 550, 505, 563, 299, 564, 2, 554, -2, 113, -323, 125, -341, 915, 1494, 939, 1495, -375, -337, -317, -328, 91)
+position = Vector2(9, 2)
+polygon = PackedVector2Array(359, 246, 393, 210, 467, 161, 539, 130, 689, 98, 795, 108, 864, 141, 905, 185, 926, 237, 928, 303, 908, 364, 864, 410, 811, 441, 717, 463, 655, 465, 617, 443, 602, 400, 605, 352, 629, 312, 657, 299, 675, 299, 685, 316, 684, 332, 679, 336, 678, 366, 707, 396, 707, 396, 779, 394, 808, 381, 851, 329, 862, 278, 859, 249, 840, 210, 813, 177, 774, 169, 675, 177, 592, 207, 527, 269, 522, 291, 520, 380, 511, 416, 493, 439, 461, 467, 399, 487, 347, 489, 285, 467, 250, 431, 230, 408, 222, 373, 221, 327, 239, 282, 260, 264, 303, 254, 357, 248, 334, 119, 159, 122, 18, 441, 112, 606, 752, 623, 1089, 535, 1111, 102, 977, -24, 570, -147, 317, -55, 345, 175)
 
 [node name="winArea" type="Area2D" parent="."]
 position = Vector2(0, 5)
@@ -33,11 +34,11 @@ collision_layer = 256
 collision_mask = 256
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="winArea"]
-position = Vector2(1001, 300)
+position = Vector2(662, 331)
 shape = SubResource("RectangleShape2D_4b80i")
 
 [node name="hotWireStart" type="Node2D" parent="."]
-position = Vector2(140, 274)
+position = Vector2(349, 370)
 
 [node name="HotwirePlayer" parent="hotWireStart" node_paths=PackedStringArray("HotwireMinigame", "start_pos") instance=ExtResource("1_ep4k1")]
 offset_left = -4.0
