@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ccoo2twrks17y"
-path="res://.godot/imported/maxresdefault.jpg-d282d5c24e02c33ed66c979cdb0efcdf.ctex"
+uid="uid://ci51sod61okfg"
+path="res://.godot/imported/deathhands_closingIn_spritesheet.png-9d418126b2fb72697fa6566938a3d014.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/death/maxresdefault.jpg"
-dest_files=["res://.godot/imported/maxresdefault.jpg-d282d5c24e02c33ed66c979cdb0efcdf.ctex"]
+source_file="res://scenes/scary_handler/deathhands_closingIn_spritesheet.png"
+dest_files=["res://.godot/imported/deathhands_closingIn_spritesheet.png-9d418126b2fb72697fa6566938a3d014.ctex"]
 
 [params]
 

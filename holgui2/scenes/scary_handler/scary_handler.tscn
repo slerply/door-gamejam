@@ -1,6 +1,6 @@
-[gd_scene load_steps=53 format=4 uid="uid://b0ljco5gdno31"]
+[gd_scene load_steps=78 format=3 uid="uid://b0ljco5gdno31"]
 
-[ext_resource type="Script" uid="uid://cm6hteffpcqo1" path="res://scenes/game/scary_handler/scary_handler.gd" id="1_yq130"]
+[ext_resource type="Script" uid="uid://cm6hteffpcqo1" path="res://scenes/scary_handler/scary_handler.gd" id="1_yq130"]
 [ext_resource type="AudioStream" uid="uid://kbp76h4554g5" path="res://imports/assets/sounds/breathing.wav" id="2_yq130"]
 [ext_resource type="AudioStream" uid="uid://d30gcudl5uisw" path="res://imports/assets/sounds/heartbeat-54250.mp3" id="3_3fm4h"]
 [ext_resource type="AudioStream" uid="uid://bum1bxamsls2l" path="res://imports/assets/sounds/face-tear.wav" id="3_yq130"]
@@ -133,6 +133,94 @@ region = Rect2(512, 210, 128, 70)
 atlas = ExtResource("6_1pfj2")
 region = Rect2(0, 280, 128, 70)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_lgfyx"]
+atlas = ExtResource("6_1pfj2")
+region = Rect2(0, 280, 128, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h00gy"]
+atlas = ExtResource("6_1pfj2")
+region = Rect2(512, 210, 128, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jfeiu"]
+atlas = ExtResource("6_1pfj2")
+region = Rect2(384, 210, 128, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gauvp"]
+atlas = ExtResource("6_1pfj2")
+region = Rect2(256, 210, 128, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_107t4"]
+atlas = ExtResource("6_1pfj2")
+region = Rect2(128, 210, 128, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o6lfk"]
+atlas = ExtResource("6_1pfj2")
+region = Rect2(0, 210, 128, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hikcb"]
+atlas = ExtResource("6_1pfj2")
+region = Rect2(512, 140, 128, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6vkb7"]
+atlas = ExtResource("6_1pfj2")
+region = Rect2(384, 140, 128, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rlu3d"]
+atlas = ExtResource("6_1pfj2")
+region = Rect2(256, 140, 128, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lrrj7"]
+atlas = ExtResource("6_1pfj2")
+region = Rect2(128, 140, 128, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g1scg"]
+atlas = ExtResource("6_1pfj2")
+region = Rect2(0, 140, 128, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d1604"]
+atlas = ExtResource("6_1pfj2")
+region = Rect2(512, 70, 128, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eqwpe"]
+atlas = ExtResource("6_1pfj2")
+region = Rect2(384, 70, 128, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_85xeb"]
+atlas = ExtResource("6_1pfj2")
+region = Rect2(256, 70, 128, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ffbyj"]
+atlas = ExtResource("6_1pfj2")
+region = Rect2(128, 70, 128, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a044q"]
+atlas = ExtResource("6_1pfj2")
+region = Rect2(0, 70, 128, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b83m8"]
+atlas = ExtResource("6_1pfj2")
+region = Rect2(512, 0, 128, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ptur"]
+atlas = ExtResource("6_1pfj2")
+region = Rect2(384, 0, 128, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_242ty"]
+atlas = ExtResource("6_1pfj2")
+region = Rect2(256, 0, 128, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ww5f0"]
+atlas = ExtResource("6_1pfj2")
+region = Rect2(128, 0, 128, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v147x"]
+atlas = ExtResource("6_1pfj2")
+region = Rect2(0, 0, 128, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ativy"]
+atlas = ExtResource("6_1pfj2")
+region = Rect2(128, 280, 128, 70)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_lfrn8"]
 atlas = ExtResource("8_7e03a")
 region = Rect2(0, 0, 128, 70)
@@ -180,6 +268,17 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": null
+}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_65y1m")
 }, {
@@ -244,7 +343,78 @@ animations = [{
 "texture": SubResource("AtlasTexture_ifo3u")
 }],
 "loop": false,
-"name": &"default",
+"name": &"hands_out",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lgfyx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h00gy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jfeiu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gauvp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_107t4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o6lfk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hikcb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6vkb7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rlu3d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lrrj7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g1scg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d1604")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eqwpe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_85xeb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ffbyj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a044q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b83m8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ptur")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_242ty")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ww5f0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v147x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ativy")
+}],
+"loop": false,
+"name": &"hands_retract",
 "speed": 5.0
 }, {
 "frames": [{
@@ -435,38 +605,38 @@ tracks/13/keys = {
 tracks/14/type = "value"
 tracks/14/imported = false
 tracks/14/enabled = true
-tracks/14/path = NodePath("Breathing:volume_db")
+tracks/14/path = NodePath("Heartbeat:playing")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [-10.0]
+"update": 1,
+"values": [true]
 }
 tracks/15/type = "value"
 tracks/15/imported = false
 tracks/15/enabled = true
-tracks/15/path = NodePath("Heartbeat:playing")
+tracks/15/path = NodePath("Breathing:playing")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
 }
 tracks/16/type = "value"
 tracks/16/imported = false
 tracks/16/enabled = true
-tracks/16/path = NodePath("Breathing:playing")
+tracks/16/path = NodePath("Breathing:volume_db")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
+"update": 0,
+"values": [0.0]
 }
 
 [sub_resource type="Animation" id="Animation_7e03a"]
@@ -643,38 +813,38 @@ tracks/13/keys = {
 tracks/14/type = "value"
 tracks/14/imported = false
 tracks/14/enabled = true
-tracks/14/path = NodePath("Breathing:volume_db")
+tracks/14/path = NodePath("Heartbeat:playing")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
-"times": PackedFloat32Array(0, 2.6),
-"transitions": PackedFloat32Array(1, 1.93187),
-"update": 0,
-"values": [0.0, -80.0]
-}
-tracks/15/type = "value"
-tracks/15/imported = false
-tracks/15/enabled = true
-tracks/15/path = NodePath("Heartbeat:playing")
-tracks/15/interp = 1
-tracks/15/loop_wrap = true
-tracks/15/keys = {
 "times": PackedFloat32Array(0, 0.9),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
 }
-tracks/16/type = "value"
-tracks/16/imported = false
-tracks/16/enabled = true
-tracks/16/path = NodePath("Breathing:playing")
-tracks/16/interp = 1
-tracks/16/loop_wrap = true
-tracks/16/keys = {
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Breathing:playing")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("Breathing:volume_db")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0, 2.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -80.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_pd2lu"]
@@ -699,16 +869,50 @@ shader_parameter/radius = 0.5
 shader_parameter/speed = 2.0
 shader_parameter/effect_color = Color(0.251, 0, 0, 1)
 
+[sub_resource type="Animation" id="Animation_75ucc"]
+resource_name = "HandsVisible"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Hands:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"default"]
+}
+
+[sub_resource type="Animation" id="Animation_lyu7q"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Hands:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"default"]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ym83n"]
+_data = {
+&"HandsVisible": SubResource("Animation_75ucc"),
+&"RESET": SubResource("Animation_lyu7q")
+}
+
 [node name="ScaryHandler" type="Node3D"]
 script = ExtResource("1_yq130")
 
 [node name="Breathing" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_yq130")
-volume_db = -10.0
 
 [node name="Heartbeat" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_3fm4h")
-pitch_scale = 2.0
 
 [node name="FaceTear" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_yq130")
@@ -717,18 +921,15 @@ stream = ExtResource("3_yq130")
 stream = ExtResource("6_65k1j")
 
 [node name="Label" type="Label" parent="."]
-visible = false
 offset_left = 296.0
 offset_top = 165.0
 offset_right = 336.0
 offset_bottom = 188.0
 
 [node name="Hands" type="AnimatedSprite2D" parent="."]
-visible = false
 position = Vector2(577.029, 324)
 scale = Vector2(8.98393, 9.25714)
 sprite_frames = SubResource("SpriteFrames_jfeiu")
-animation = &"wiggle"
 
 [node name="DyingAnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -838,5 +1039,10 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 color = Color(1, 1, 1, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_ym83n")
+}
 
 [connection signal="pressed" from="ScoreBG/Button" to="." method="_on_button_pressed"]
