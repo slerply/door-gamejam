@@ -42,6 +42,7 @@ func stop_minigame(minigame):
 	minigame.exit()
 	print("removed minigame: ", minigame.name)
 	controller.remove_child(minigame) # deactivates scenes but not deletes
+	# ERROR MESSAGE ^ not allowed, will cause undesired behaviour: use call_deferred() instead to remove
 	current_minigame = null
 	
 func start_all_minigames(current_count_minigame = 1):
