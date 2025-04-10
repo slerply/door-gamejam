@@ -51,7 +51,7 @@ func handle_deathtimer(_delta: float) -> void:
 	deathtimer_label.text = str(deathtimer)
 	# reset timer when finished, add one to minigames
 	if minigame_finished:
-		print("SUCCESS >> ADD MORE")
+		print("SUCCESSFULLY FINISHED MINIGAMES >> ADD MORE")
 		number_minigames += 1
 		minigame_started = false
 		minigame_finished = false
@@ -63,10 +63,10 @@ func handle_deathtimer(_delta: float) -> void:
 		deathtimer -= _delta
 	# emit died when deathtimer runs out
 	elif deathtimer <= 0:
+		print("PLAYER DIED")
 		minigame_controller.stop_all_minigames()
-		print("YOU DIED")
-		died.emit(score)
 		dead = true
+		died.emit(score)
 
 func _on_all_minigames_finished() -> void:
 	minigame_finished = true
